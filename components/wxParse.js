@@ -14,18 +14,16 @@ let realWindowHeight = 0;
 })()
 
 Component({
-  bindData: {},
-
   properties: {
     nodes: {
       type: null,
       observer(val) {
         if (val) {
-          if (typeof val === 'string') {
+          if (typeof val === 'string') { // 初始为html富文本字符串
             this._parseHtml(val)
-          } else if (Array.isArray(val)) {
+          } else if (Array.isArray(val)) { // html 富文本解析成节点数组
             this.setData({ nodesData: val })
-          } else {
+          } else { // 其余为单个节点对象
             const nodesData = [ val ]
             this.setData({ nodesData })
           }
@@ -36,6 +34,7 @@ Component({
 
   data: {
     nodesData: [],
+    bindData: {},
   },
 
   methods: {
@@ -45,19 +44,23 @@ Component({
       //存放html节点转化后的json数据
       const transData = HtmlToJson.html2json(html, bindName)
 
-      this.setData({ nodesData: transData.nodes })
-      console.log('first:', transData)
       transData.view = {}
       transData.view.imagePadding = 0
 
-      // this.bindData[bindName] = transData
+      this.setData({
+        nodesData: transData.nodes,
+        bindData: {
+          [bindName]: transData
+        }
+      })
+      console.log(this.data)
     },
 
     /**
      * 图片视觉宽高计算函数区
      * @param {*} e 
      */
-    _wxParseImgLoad(e) {
+    wxParseImgLoad(e) {
       const { from: tagFrom, idx } = e.target.dataset || {}
       if (typeof tagFrom !== 'undefined' && tagFrom.length > 0) {
         this._calMoreImageInfo(e, idx, tagFrom)
@@ -71,11 +74,14 @@ Component({
      * @param {*} bindName 
      */
     _calMoreImageInfo(e, idx, bindName) {
-      const temData = this.bindData[bindName]
+      const bindData = this.data.bindData
+      const temData = bindData[bindName]
+      // debugger
       if (!temData || temData.images.length === 0) {
         return
       }
 
+      return
       const temImages = temData.images
       const { width, height } = e.detail
       //因为无法获取view宽度 需要自定义padding进行计算，稍后处理
