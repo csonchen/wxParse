@@ -1,89 +1,86 @@
-<view class="wxParse">
-  <block wx:for="{{nodes}}" wx:for-index="index" wx:key="index" wx:for-item="item">
-    <!-- 判断是否为标签节点 -->
-    <block wx:if="{{item.node == 'element'}}">
-      <!-- button类型 -->
-      <block wx:if="{{item.tag == 'button'}}">
-        <button type="default" size="mini">
-          <!-- 如果还有子节点，递归遍历自身 -->
-          <block wx:for="{{item.nodes}}" wx:for-index="childIndex" wx:key="childIndex" wx:for-item="child">
-            <wxParse nodes="{{child.nodes}}"></wxParse>
-          </block>
-        </button>
-      </block>
-
-      <!-- li类型 -->
-      <block wx:elif="{{item.tab == 'li'}}">
-        <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
-          <view class="{{item.classStr}} wxParse-li-inner">
-            <view class="{{item.classStr}} wxParse-li-text">
-              <view class="{{item.classStr}} wxParse-li-circle"></view>
-            </view>
-            <view class="{{item.classStr}} wxParse-li-text">
-              <block wx:for="{{item.nodes}}" wx:for-index="childIndex" wx:key="childIndex" wx:for-item="child">
-                <wxParse nodes="{{child.nodes}}"></wxParse>
-              </block>
-            </view>
-          </view>
-        </view>
-      </block>
-
-      <!-- video类型 -->
-      <block wx:elif="{{item.tag == 'video'}}">
-        <!--增加video标签支持，并循环添加-->
-        <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
-          <video class="{{item.classStr}} wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
-        </view>
-      </block>
-
-      <!-- img类型 -->
-      <block wx:elif="{{item.tag == 'img'}}">
-        <!-- bindtap="wxParseImgTap" -->
-        <image 
-          class="{{item.classStr}} wxParse-{{item.tag}}" 
-          data-from="{{item.from}}" 
-          data-src="{{item.attr.src}}" 
-          data-idx="{{item.imgIndex}}" 
-          src="{{item.attr.src}}" 
-          mode="aspectFit" 
-          bindload="wxParseImgLoad"  
-          mode="widthFix" 
-          style="width:{{item.width}}px;"
-        />
-      </block>
-
-      <!-- a类型 -->
-      <block wx:elif="{{item.tag == 'a'}}">
-
-      </block>
-
-      <!-- br类型 -->
-      <block wx:elif="{{item.tag == 'br'}}">
-        <text>\n</text>
-      </block>
-
-      <!-- 其它块级标签 -->
-      <block wx:elif="{{item.tagType == 'block'}}">
-        <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
-          <block wx:for="{{item.nodes}}" wx:for-index="childIndex" wx:key="childIndex" wx:for-item="child">
-            <wxParse nodes="{{child.nodes}}"></wxParse>
-          </block>
-        </view>
-      </block>
+<block wx:for="{{nodesData}}" wx:for-index="index" wx:key="index" wx:for-item="item">
+  <!-- 判断是否为标签节点 -->
+  <block wx:if="{{item.node == 'element'}}">
+    <!-- button类型 -->
+    <block wx:if="{{item.tag == 'button'}}">
+      <button type="default" size="mini">
+        <!-- 如果还有子节点，递归遍历自身 -->
+        <block wx:for="{{item.nodes}}" wx:for-index="childIndex" wx:key="childIndex" wx:for-item="child">
+          <wxParse nodes="{{child}}"></wxParse>
+        </block>
+      </button>
     </block>
 
-    <!-- 判断是否为文本节点 -->
-    <block wx:elif="{{item.node == 'text'}}">
-      <text>sdsdgsdgsdg</text>
-      <view class="WxEmojiView wxParse-inline" style="{{item.styleStr}}">
-        <block wx:for="{{item.textArray}}" wx:key="arrIndex" wx:key="arrindex" wx:for="textItem">
-          <block class="{{item.text == '\\n' ? 'wxParse-hide':''}}" wx:if="{{item.node == 'text'}}">{{item.text}}</block>
-          <block wx:elif="{{item.node == 'element'}}">
-            <image class="wxEmoji" src="{{item.baseSrc}}{{item.text}}" />
-          </block>
-        </block>
+    <!-- li类型 -->
+    <block wx:elif="{{item.tab == 'li'}}">
+      <view class="{{item.classStr}} wxParse-li" style="{{item.styleStr}}">
+        <view class="{{item.classStr}} wxParse-li-inner">
+          <view class="{{item.classStr}} wxParse-li-text">
+            <view class="{{item.classStr}} wxParse-li-circle"></view>
+          </view>
+          <view class="{{item.classStr}} wxParse-li-text">
+            <block wx:for="{{item.nodes}}" wx:for-index="childIndex" wx:key="childIndex" wx:for-item="child">
+              <wxParse nodes="{{child}}"></wxParse>
+            </block>
+          </view>
+        </view>
       </view>
     </block>
 
+    <!-- video类型 -->
+    <block wx:elif="{{item.tag == 'video'}}">
+      <!--增加video标签支持，并循环添加-->
+      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+        <video class="{{item.classStr}} wxParse-{{item.tag}}-video" src="{{item.attr.src}}"></video>
+      </view>
+    </block>
+
+    <!-- img类型 -->
+    <block wx:elif="{{item.tag == 'img'}}">
+      <!-- bindtap="wxParseImgTap" -->
+      <image 
+        class="{{item.classStr}} wxParse-{{item.tag}}" 
+        data-from="{{item.from}}" 
+        data-src="{{item.attr.src}}" 
+        data-idx="{{item.imgIndex}}" 
+        src="{{item.attr.src}}" 
+        mode="aspectFit" 
+        bindload="wxParseImgLoad"  
+        mode="widthFix" 
+        style="width:{{item.width}}px;"
+      />
+    </block>
+
+    <!-- a类型 -->
+    <block wx:elif="{{item.tag == 'a'}}">
+
+    </block>
+
+    <!-- br类型 -->
+    <block wx:elif="{{item.tag == 'br'}}">
+      <text>\n</text>
+    </block>
+
+    <!-- 其它块级标签 -->
+    <block wx:elif="{{item.tagType == 'block'}}">
+      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+        <block wx:for="{{item.nodes}}" wx:for-index="childIndex" wx:key="childIndex" wx:for-item="child">
+          <wxParse nodes="{{child}}"></wxParse>
+        </block>
+      </view>
+    </block>
   </block>
-</view>
+
+  <!-- 判断是否为文本节点 -->
+  <block wx:elif="{{item.node == 'text'}}">
+    <view class="WxEmojiView wxParse-inline" style="{{item.styleStr}}">
+      <block wx:for="{{item.textArray}}" wx:key="arrIndex" wx:key="arrindex" wx:for-item="textItem">
+        <block class="{{textItem.text == '\\n' ? 'wxParse-hide':''}}" wx:if="{{textItem.node == 'text'}}">{{textItem.text}}</block>
+        <block wx:elif="{{textItem.node == 'element'}}">
+          <image class="wxEmoji" src="{{textItem.baseSrc}}{{textItem.text}}" />
+        </block>
+      </block>
+    </view>
+  </block>
+
+</block>

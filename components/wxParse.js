@@ -18,23 +18,24 @@ Component({
 
   properties: {
     nodes: {
-      type: Array,
-      value: []
-    },
-
-    htmlText: {
-      type: String,
-      value: '',
-      observer(newVal, oldVal) {
-        if (newVal) {
-          this._parseHtml(newVal)
+      type: null,
+      observer(val) {
+        if (val) {
+          if (typeof val === 'string') {
+            this._parseHtml(val)
+          } else if (Array.isArray(val)) {
+            this.setData({ nodesData: val })
+          } else {
+            const nodesData = [ val ]
+            this.setData({ nodesData })
+          }
         }
       }
-    }
+    },
   },
 
   data: {
-    nodesData: null,
+    nodesData: [],
   },
 
   methods: {
@@ -44,9 +45,8 @@ Component({
       //存放html节点转化后的json数据
       const transData = HtmlToJson.html2json(html, bindName)
 
-      debugger
-      this.setData({ nodes: transData.nodes })
-      console.log(transData)
+      this.setData({ nodesData: transData.nodes })
+      console.log('first:', transData)
       transData.view = {}
       transData.view.imagePadding = 0
 
