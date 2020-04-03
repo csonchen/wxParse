@@ -14,5 +14,5 @@
 </view>
 
 <!-- 富文本解析 -->
-<wxParse></wxParse>
+<wxParse htmlText="{{htmlText}}"></wxParse>
 

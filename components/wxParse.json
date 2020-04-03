@@ -1,4 +1,6 @@
 {
   "Component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "wxParse": "./wxParse"
+  }
 }

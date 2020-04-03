@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    htmlText: '<div class="testP">增加图文详情类<p><img src="https://dev-sit-1251698455.cos.ap-guangzhou.myqcloud.com/ds/20/50/20200330/3edaec5f39ea43aba4883b041becbf2b.png" style="max-width: 100%;"></p></div><p><br></p>',
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
