@@ -68,6 +68,7 @@ Component({
         
         //因为无法获取view宽度 需要自定义padding进行计算，稍后处理
         const recal = this._wxAutoImageCal(width, height)
+        console.log(recal.imageWidth)
         this.setData({ width: recal.imageWidth })
       }
     },
@@ -89,7 +90,7 @@ Component({
         autoWidth = windowWidth
         autoHeight = (autoWidth * originalHeight) / originalWidth
         results.imageWidth = autoWidth
-        results.imageWidth = autoHeight
+        results.imageHeight = autoHeight
       } else { // 否则展示原来数据
         results.imageWidth = originalWidth
         results.imageHeight = originalHeight
