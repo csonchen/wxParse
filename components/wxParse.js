@@ -68,7 +68,6 @@ Component({
         
         //因为无法获取view宽度 需要自定义padding进行计算，稍后处理
         const recal = this._wxAutoImageCal(width, height)
-        console.log(recal.imageWidth)
         this.setData({ width: recal.imageWidth })
       }
     },
@@ -96,6 +95,21 @@ Component({
         results.imageHeight = originalHeight
       }
       return results
+    },
+
+    /**
+     * 增加a标签跳转
+     * @param {*} e 
+     */
+    wxParseTagATap(e) {
+      const { src } = e.currentTarget.dataset
+
+      // 采用递归组件方式渲染，不能通过triggerEvent方式向父级传参，可以获取当前页面调用页面方法处理
+      const curPages =  getCurrentPages();
+      const currentPage = curPages[curPages.length - 1]
+      if (currentPage) {
+        currentPage.handleTagATap && currentPage.handleTagATap(src)
+      }
     }
   }
 })
