@@ -73,6 +73,13 @@
         </block>
       </view>
     </block>
+
+    <!-- 其它内联标签 -->
+    <view wx:else class="{{item.classStr}} wxParse-{{item.tag}} wxParse-{{item.tagType}}" style="{{item.styleStr}}">
+      <block wx:for="{{item.nodes}}" wx:for-index="childIndex" wx:key="childIndex" wx:for-item="child">
+        <wxParse nodes="{{child}}"></wxParse>
+      </block>
+    </view>
   </block>
 
   <!-- 判断是否为文本节点 -->
