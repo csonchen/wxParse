@@ -61,56 +61,27 @@ Component({
      * @param {*} e 
      */
     wxParseImgLoad(e) {
-      const { from: tagFrom, idx } = e.target.dataset || {}
+      // 获取当前的image node节点
+      const { from: tagFrom } = e.target.dataset || {}
       if (typeof tagFrom !== 'undefined' && tagFrom.length > 0) {
-        this._calMoreImageInfo(e, idx, tagFrom)
+        const { width, height } = e.detail
+        
+        //因为无法获取view宽度 需要自定义padding进行计算，稍后处理
+        const recal = this._wxAutoImageCal(width, height)
+        this.setData({ width: recal.imageWidth })
       }
-    },
-
-    /**
-     * 假循环获取计算图片视觉最佳宽高
-     * @param {*} e 
-     * @param {*} idx 
-     * @param {*} bindName 
-     */
-    _calMoreImageInfo(e, idx, bindName) {
-      const bindData = this.data.bindData
-      const temData = bindData[bindName]
-      // debugger
-      if (!temData || temData.images.length === 0) {
-        return
-      }
-
-      return
-      const temImages = temData.images
-      const { width, height } = e.detail
-      //因为无法获取view宽度 需要自定义padding进行计算，稍后处理
-      const recal = wxAutoImageCal(width, height ,bindName); 
-      const index = temImages[idx].index
-      let key = `${bindName}`
-      for (let i of index.split('.')) {
-        key += `.nodex[${i}]`
-      }
-      const keyW = key + '.width'
-      const keyH = key + '.height'
-      this.setData({
-        [keyW]: recal.imageWidth,
-        [keyH]: recal.imageHeight,
-      })
     },
 
     /**
      * 计算视觉优先的图片宽高
      * @param {*} originalWidth 
      * @param {*} originalHeight 
-     * @param {*} bindName 
      */
-    _wxAutoImageCal(originalWidth, originalHeight, bindName) {
+    _wxAutoImageCal(originalWidth, originalHeight) {
       let windowWidth = 0, windowHeight = 0;
       let autoWidth = 0, autoHeight = 0;
       const results = {}
-      const padding = this.bindData[bindName].view.imagePadding
-      windowWidth = realWindowWidth - 2 * padding
+      windowWidth = realWindowWidth
       windowHeight = realWindowHeight
 
       // 判断按照哪种方式进行缩放

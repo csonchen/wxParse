@@ -47,7 +47,7 @@
         mode="aspectFit" 
         bindload="wxParseImgLoad"  
         mode="widthFix" 
-        style="width:{{item.width}}px;"
+        style="width:{{width}}px;"
       />
     </block>
 
