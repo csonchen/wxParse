@@ -195,3 +195,13 @@ view{
 .wxParse-figure {
   overflow: hidden;
 }
+.wxParse-ol-inner,.wxParse-ul-inner {
+  display: flex;
+  align-items: center;
+}
+.mr5 {
+  margin-right: 5px;
+}
+.flex-full {
+  flex: 1;
+}

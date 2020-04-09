@@ -13,6 +13,8 @@
 
 </view>
 
+<view style="text-align: center;"><view style="display: inline;"><view style="display: inline;">span</view></view></view>
+
 <!-- 富文本解析 -->
 <wxParse nodes="{{htmlText}}"></wxParse>
 
