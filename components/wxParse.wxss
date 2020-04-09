@@ -12,7 +12,7 @@ view{
 }
 .wxParse-inline{
   display: inline;
-  margin: 0;
+  /* margin: 0; */
   padding: 0;
 }
 /*//标题 */
@@ -106,12 +106,11 @@ view{
 }
 
 .wxParse-li,.wxParse-li-inner{
-  display: flex;
+  /* display: flex; */
   align-items: baseline;
   margin: 10rpx 0;
 }
 .wxParse-li-text{
-  
   align-items: center;
   line-height: 20px;
 }
@@ -122,6 +121,7 @@ view{
   height: 5px;
   background-color: #333;
   margin-right: 5px;
+  border-radius: 50%;
 }
 
 .wxParse-li-square{
