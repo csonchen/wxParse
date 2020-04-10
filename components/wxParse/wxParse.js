@@ -1,17 +1,5 @@
-import HtmlToJson from '../utils/html2json';
-
-// 获取屏幕的宽高
-let realWindowWidth = 0;
-let realWindowHeight = 0;
-
-(function() {
-  wx.getSystemInfo({
-    success(res) {
-      realWindowWidth = res.windowWidth
-      realWindowHeight = res.windowHeight
-    }
-  })
-})()
+import HtmlToJson from '../../utils/html2json';
+import { getSystemInfo } from '../../utils/util';
 
 Component({
   properties: {
@@ -78,11 +66,9 @@ Component({
      * @param {*} originalHeight 
      */
     _wxAutoImageCal(originalWidth, originalHeight) {
-      let windowWidth = 0, windowHeight = 0;
       let autoWidth = 0, autoHeight = 0;
       const results = {}
-      windowWidth = realWindowWidth
-      windowHeight = realWindowHeight
+      const [ windowWidth, windowHeight ] = getSystemInfo()
 
       // 判断按照哪种方式进行缩放
       if (originalWidth > windowWidth) { //在图片width大于手机屏幕width时候

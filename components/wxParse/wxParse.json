@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "wxParse": "./wxParse",
+    "wxAudio": "../wxAudio/wxAudio"
+  }
+}

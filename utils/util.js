@@ -1,19 +1,20 @@
-const formatTime = date => {
-  const year = date.getFullYear()
-  const month = date.getMonth() + 1
-  const day = date.getDate()
-  const hour = date.getHours()
-  const minute = date.getMinutes()
-  const second = date.getSeconds()
+/**
+ * 获取屏幕的宽高
+ */
 
-  return [year, month, day].map(formatNumber).join('/') + ' ' + [hour, minute, second].map(formatNumber).join(':')
-}
+let windowWidth = 0
+let windowHeight = 0
+wx.getSystemInfo({
+  success(res) {
+    windowWidth = res.windowWidth
+    windowHeight = res.windowHeight
+  }
+})
 
-const formatNumber = n => {
-  n = n.toString()
-  return n[1] ? n : '0' + n
+const getSystemInfo = () => {
+  return [ windowWidth, windowHeight ]
 }
 
 module.exports = {
-  formatTime: formatTime
+  getSystemInfo,
 }

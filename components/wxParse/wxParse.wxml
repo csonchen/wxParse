@@ -81,6 +81,13 @@
       </view>
     </block>
 
+    <!-- audio类型 -->
+    <block wx:elif="{{item.tag == 'audio'}}" hidden>
+      <view class="wxParse-audio">
+        <wxAudio src="{{item.attr.src}}" class="wxParse-audio-inner {{item.classStr}}" style="{{item.styleStr}}"></wxAudio>
+      </view>
+    </block>
+
     <!-- br类型 -->
     <block wx:elif="{{item.tag == 'br'}}">
       <text>\n</text>

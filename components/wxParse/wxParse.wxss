@@ -199,9 +199,18 @@ view{
   display: flex;
   align-items: center;
 }
+
+/* audio */
+.wxParse-audio-inner {
+  width: 100%;
+  height: 200rpx;
+}
+
+/* common */
 .mr5 {
   margin-right: 5px;
 }
+
 .flex-full {
   flex: 1;
 }
