@@ -51,6 +51,10 @@
 <wxParse nodes="{{htmlText}}" />
 ```
 
+### 示例展示
+
+![示例](/static/demo.png)
+
 ### TODO
 
 - [ ] 编写插件，小程序可以通过插件方式引入；
