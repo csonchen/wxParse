@@ -4,3 +4,6 @@
 <!-- 富文本解析 -->
 <wxParse nodes="{{htmlText}}"></wxParse>
 
+<!-- 代码高亮 -->
+<view style="margin-top: 20px; margin-bottom: 20px; font-size: 20px;">代码高亮展示</view>
+<highLight codeText="{{codeText}}"></highLight>

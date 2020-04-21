@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "wxAudio": "../../components/wxAudio/wxAudio",
+    "highLight": "../../components/highLight/highLight",
     "wxParse": "../../components/wxParse/wxParse"
   }
 }

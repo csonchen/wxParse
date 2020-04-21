@@ -51,9 +51,30 @@
 <wxParse nodes="{{htmlText}}" />
 ```
 
+3. **补充组件**：代码高亮展示组件使用（目前只支持 `javascript` 语法，等我有时间再扩展别的语法）
+
+- 在 `page`的 `json` 文件里面引入 `highLight` 组件
+
+```javascript
+{
+  "usingComponents": {
+    "highLight": "../../components/highLight"
+  }
+}
+```
+
+- 组件调用
+
+```javascript
+<highLight codeText="{{codeText}}" />
+```
+
+
 ### 示例展示
 
 ![示例](/static/demo.png)
+
+![示例](/static/highlight.png)
 
 ### TODO
 
