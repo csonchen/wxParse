@@ -110,7 +110,7 @@ npm install --save wx-minicomponent
 ```json
 {
   "usingComponents": {
-    "wxParse": "/miniprogram_npm/wx-minicomponent/highLight"
+    "highLight": "/miniprogram_npm/wx-minicomponent/highLight"
   }
 }
 ```
