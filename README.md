@@ -20,52 +20,104 @@
 
 ### 功能标签
 
-目前该项目已经可以支持以下标签的渲染：
-- [x] audio标签（可自行更换组件样式，暂时采用微信公众号文章的`audio`音乐播放器的样式处理）
-- [x] ul标签
-- [x] ol标签 
-- [x] li标签
-- [x] a标签
-- [x] img标签
-- [x] video标签
-- [x] br标签
-- [x] button标签
-- [x] 文本节点
-- [x] 其余块级标签
-- [x] 其余行级标签
+1. 目前该项目已经可以支持以下标签的渲染：
+
+  - [x] audio标签（可自行更换组件样式，暂时采用微信公众号文章的`audio`音乐播放器的样式处理）
+  - [x] ul标签
+  - [x] ol标签 
+  - [x] li标签
+  - [x] a标签
+  - [x] img标签
+  - [x] video标签
+  - [x] br标签
+  - [x] button标签
+  - [x] 文本节点
+  - [x] 其余块级标签
+  - [x] 其余行级标签
+
+2. 支持 **npm包** 引入
+
+```shell
+npm install --save wx-minicomponent
+```
 
 ### 使用
-1. 在 `page`的 `json` 文件里面引入 `wxParse` 组件
 
-```javascript
+1. **原生组件使用方法**
+
+- 克隆 [项目](https://github.com/csonchen/wxParse) 代码，把 **components目录** 和 **utils目录** 拷贝到你的小程序根目录下面;
+
+- 在你的 **page页面** 对应的 `json` 文件引入 `wxParse` 组件
+
+```json
 {
   "usingComponents": {
-    "wxParse": "../../components/wxParse"
-  }
-}
-```
-
-2. 组件调用
-
-```javascript
-<wxParse nodes="{{htmlText}}" />
-```
-
-3. **补充组件**：代码高亮展示组件使用（目前只支持 `javascript` 语法，等我有时间再扩展别的语法）
-
-- 在 `page`的 `json` 文件里面引入 `highLight` 组件
-
-```javascript
-{
-  "usingComponents": {
-    "highLight": "../../components/highLight"
+    "wxParse": "/components/wxParse/wxParse"
   }
 }
 ```
 
 - 组件调用
 
-```javascript
+```xml
+<wxParse nodes="{{ htmlText }}" />
+```
+
+2. **npm组件使用方法**
+
+- 安装组件
+
+```shell
+npm install --save wx-minicomponent
+```
+
+- 小程序开发工具的 `工具` 栏找到 `构建npm`，点击构建；
+
+- 在页面的 json 配置文件中添加 `wxParse` 自定义组件的配置
+
+```json
+{
+  "usingComponents": {
+    "wxParse": "/miniprogram_npm/wx-minicomponent/wxParse"
+  }
+}
+```
+
+- `wxml` 文件中引用 wxParse
+
+```xml
+<wxParse nodes="{{ htmlText }}" />
+```
+
+**提示：详细步骤可以参考小程序的[npm使用文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)**
+
+3. **补充组件**：代码高亮展示组件使用（目前只支持 `javascript` 语法，等我有时间再扩展别的语法）
+
+- 在 `page`的 `json` 文件里面引入 `highLight` 组件
+
+**原生引入：**
+
+```json
+{
+  "usingComponents": {
+    "highLight": "/components/highLight/highLight"
+  }
+}
+```
+
+**npm组件引入：**
+
+```json
+{
+  "usingComponents": {
+    "wxParse": "/miniprogram_npm/wx-minicomponent/highLight"
+  }
+}
+```
+
+- 组件调用
+
+```xml
 <highLight codeText="{{codeText}}" />
 ```
 
