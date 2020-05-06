@@ -23,7 +23,7 @@ const bindData = (() => {
         [bindName]: data
       } 
     }
-    return instance
+    return instance[bindName]
   }
 })();
 

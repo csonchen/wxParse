@@ -68,7 +68,7 @@ Component({
     wxParseImgTap(e) {
       const { src } = e.target.dataset
       const bindName = 'wxParseData'
-      const { wxParseData: { imageUrls }} = bindData(bindName)
+      const { imageUrls } = bindData(bindName)
       wx.previewImage({
         current: src,
         urls: imageUrls
