@@ -1,5 +1,5 @@
 import HtmlToJson from '../../utils/html2json';
-import { getSystemInfo } from '../../utils/util';
+import { getSystemInfo, bindData } from '../../utils/util';
 
 Component({
   properties: {
@@ -41,6 +41,7 @@ Component({
           [bindName]: transData
         }
       })
+      bindData(bindName, transData)
       console.log(this.data)
     },
 
@@ -58,6 +59,20 @@ Component({
         const recal = this._wxAutoImageCal(width, height)
         this.setData({ width: recal.imageWidth })
       }
+    },
+
+    /**
+     * 预览图片
+     * @param {*} e 
+     */
+    wxParseImgTap(e) {
+      const { src } = e.target.dataset
+      const bindName = 'wxParseData'
+      const { wxParseData: { imageUrls }} = bindData(bindName)
+      wx.previewImage({
+        current: src,
+        urls: imageUrls
+      })
     },
 
     /**

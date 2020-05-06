@@ -128,6 +128,10 @@ npm install --save wx-minicomponent
 
 ![示例](/static/highlight.png)
 
+### 更新历史
+
+- 2020-5-6：增加图片预览功能
+
 ### TODO
 
 - [ ] 编写插件，小程序可以通过插件方式引入；

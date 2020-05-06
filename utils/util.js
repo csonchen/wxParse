@@ -15,6 +15,19 @@ const getSystemInfo = () => {
   return [ windowWidth, windowHeight ]
 }
 
+const bindData = (() => {
+  let instance = null
+  return function(bindName, data) {
+    if (!instance) {
+      instance = {
+        [bindName]: data
+      } 
+    }
+    return instance
+  }
+})();
+
 module.exports = {
   getSystemInfo,
+  bindData,
 }

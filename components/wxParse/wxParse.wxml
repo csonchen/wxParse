@@ -66,6 +66,7 @@
         data-idx="{{item.imgIndex}}" 
         src="{{item.attr.src}}" 
         mode="aspectFit" 
+        bindtap="wxParseImgTap"
         bindload="wxParseImgLoad"  
         mode="widthFix" 
         style="width:{{width}}px;"
