@@ -124,12 +124,17 @@ npm install --save wx-minicomponent
 
 ### 示例展示
 
-![示例](/static/demo.png)
+- 富文本解析
 
-![示例](/static/highlight.png)
+![示例](/static/wxParse.gif)
+
+- 代码高亮
+
+![示例](/static/wxHigh.gif)
 
 ### 更新历史
 
+- 2020-5-13: 增加css，html，ts，sql，markdown代码高亮提示支持
 - 2020-5-6：增加图片预览功能
 
 ### TODO
