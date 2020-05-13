@@ -30,8 +30,55 @@ const jsCode = `init = jQuery.fn.init = function( selector, context, root ) {
   return jQuery.makeArray( selector, this )
 }`
 
+const cssCode = `
+.flex {
+  display: flex;
+}
+.flex-center {
+  justify-content: center;
+}
+.flex-middle {
+  align-items: center;
+}
+`
+
+const htmlCode = `
+<div>
+  <p class="font12">我是标题</p>
+  <text>我是文本</text>
+</div>
+`
+
+const markdownCode = `
+## 我是标题
+
+### 我是副标题
+
+1. 我是列表1
+2. 我是列表2
+`
+
+const sqlCode = `
+select * from t_ad where id = 1
+
+select ad_name from t_ad where id = 1
+`
+
+const tsCode = `
+const id: number;
+
+const setId: (id: number) => {
+  this.id = id
+}
+`
+
 Page({
   data: {
     codeText: `${jsCode}`,
+    cssCode: `${cssCode}`,
+    htmlCode: `${htmlCode}`,
+    markdownCode: `${markdownCode}`,
+    sqlCode: `${sqlCode}`,
+    tsCode: `${tsCode}`,
   },
 })

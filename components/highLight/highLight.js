@@ -4,15 +4,22 @@ Component({
   properties: {
     codeText: {
       type: String,
-      value: '',
-      observer(newVal) {
-        this.parseCode(newVal)
-      }
+      value: ''
+    },
+
+    language: {
+      type: String,
+      value: 'javascript'
     }
   },
 
   data: {
     code: ''
+  },
+
+  attached() {
+    const { codeText, language } = this.data
+    this.parseCode(codeText, language)
   },
 
   methods: {

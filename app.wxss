@@ -69,3 +69,9 @@ page {
   color: #fff;
   border-radius: 5px;
 }
+.sub-title {
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-weight: bold;
+}

@@ -1,3 +1,19 @@
-<view class="font20 bold mb20">highLight —— 代码解析高亮</view>
+<view class="font20 bold">highLight —— 代码解析高亮</view>
 
-<highLight codeText="{{codeText}}"></highLight>
+<view class="sub-title">1. js代码解析</view>
+<highLight codeText="{{codeText}}" language="javascript"></highLight>
+
+<view class="sub-title">2. css代码解析</view>
+<highLight codeText="{{cssCode}}" language="css"></highLight>
+
+<view class="sub-title">3. html代码解析</view>
+<highLight codeText="{{htmlCode}}" language="xml"></highLight>
+
+<view class="sub-title">4. markdown代码解析</view>
+<highLight codeText="{{markdownCode}}" language="markdown"></highLight>
+
+<view class="sub-title">5. sql代码解析</view>
+<highLight codeText="{{sqlCode}}" language="sql"></highLight>
+
+<view class="sub-title">6. ts代码解析</view>
+<highLight codeText="{{tsCode}}" language="typescript"></highLight>
