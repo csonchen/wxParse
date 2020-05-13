@@ -1,0 +1,3 @@
+<view class="font20 bold mb20">wxParse —— 富文本解析</view>
+
+<wxParse nodes="{{htmlText}}"></wxParse>

@@ -1,9 +1,7 @@
-<!--index.wxml-->
-<view style="text-align: center;"><view style="display: inline;"><view style="display: inline;">span</view></view></view>
-
-<!-- 富文本解析 -->
-<wxParse nodes="{{htmlText}}"></wxParse>
-
-<!-- 代码高亮 -->
-<view style="margin-top: 20px; margin-bottom: 20px; font-size: 20px;">代码高亮展示</view>
-<highLight codeText="{{codeText}}"></highLight>
+<view class="page">
+  <view class="flex-column flex-center-xy">
+    <view class="font20 bold mb20">小程序组件</view>
+    <navigator class="normal-btn mb15" url="/pages/richTextPage/richTextPage">1. 富文本组件</navigator>
+    <navigator class="normal-btn mb15" url="/pages/highLightPage/highLightPage">2. 代码高亮组件</navigator>
+  </view>
+</view>

@@ -1,6 +1,8 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/richTextPage/richTextPage",
+    "pages/highLightPage/highLightPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
