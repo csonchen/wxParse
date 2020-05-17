@@ -121,7 +121,7 @@ npm install --save wx-minicomponent
 <highLight codeText="{{codeText}}" />
 ```
 
-### 参数文档
+### 参数文档
 
 - **wxParse**
 
@@ -134,7 +134,7 @@ nodes|富文本字符|String|"\<div\>test\</div\>"
 节点|例子
 :--|:--
 audio|\<audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1" /\>
-a|\<a href="www.baidu.com">跳转到百度\</a>
+a|\<a href="www.baidu.com"\>跳转到百度\</a\>
 p|
 div|
 span|
