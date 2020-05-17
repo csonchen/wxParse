@@ -127,9 +127,9 @@ npm install --save wx-minicomponent
 
 参数|说明|类型|例子
 :--|:--|:--|:--
-nodes|富文本字符|String|"\<div\>test\</div\>"
+nodes|富文本字符|String|"\<div\>test\</div\>"
 
-**受信任的节点**
+**受信任的节点**
 
 节点|例子
 :--|:--
@@ -152,7 +152,7 @@ button|
 codeText|原始高亮代码字符|String|"var num = 10;"
 language|代码语言类型|String|可选值："javascript/typescript/css/xml/sql/markdown"
 
-**提示：如果是html语言，language的值为xml**
+**提示：如果是html语言，language的值为xml**
 
 
 - **wxAudio**
@@ -161,7 +161,7 @@ language|代码语言类型|String|可选值："javascript/typescript/css/xml/sq
 :--|:--|:--|:--
 title|标题|String|"test"
 desc|副标题|String|"sub test"
-src|音频地址|String|
+src|音频地址|String|
 
 ### 示例展示
 
