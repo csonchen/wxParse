@@ -58,7 +58,6 @@
 
     <!-- img类型 -->
     <block wx:elif="{{item.tag == 'img'}}">
-      <!-- bindtap="wxParseImgTap" -->
       <image 
         class="{{item.classStr}} wxParse-{{item.tag}}" 
         data-from="{{item.from}}" 
@@ -83,9 +82,15 @@
     </block>
 
     <!-- audio类型 -->
-    <block wx:elif="{{item.tag == 'audio'}}" hidden>
+    <block wx:elif="{{item.tag == 'audio'}}">
       <view class="wxParse-audio">
-        <wxAudio src="{{item.attr.src}}" class="wxParse-audio-inner {{item.classStr}}" style="{{item.styleStr}}"></wxAudio>
+        <wxAudio 
+          src="{{item.attr.src}}" 
+          title="{{item.attr.title}}" 
+          desc="{{item.attr.desc}}" 
+          class="wxParse-audio-inner {{item.classStr}}" 
+          style="{{item.styleStr}}" 
+        />
       </view>
     </block>
 

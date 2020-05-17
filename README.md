@@ -121,6 +121,47 @@ npm install --save wx-minicomponent
 <highLight codeText="{{codeText}}" />
 ```
 
+### 参数文档
+
+- **wxParse**
+
+参数|说明|类型|例子
+:--|:--|:--|:--
+nodes|富文本字符|String|"\<div\>test\</div\>"
+
+**受信任的节点**
+
+节点|例子
+:--|:--
+audio|\<audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1" /\>
+a|\<a href="www.baidu.com">跳转到百度\</a>
+p|
+div|
+span|
+li|
+ul|
+ol|
+img|
+button|
+....|
+
+- **highLight**
+
+参数|说明|类型|例子
+:--|:--|:--|:--
+codeText|原始高亮代码字符|String|"var num = 10;"
+language|代码语言类型|String|可选值："javascript/typescript/css/xml/sql/markdown"
+
+**提示：如果是html语言，language的值为xml**
+
+
+- **wxAudio**
+
+参数|说明|类型|例子
+:--|:--|:--|:--
+title|标题|String|"test"
+desc|副标题|String|"sub test"
+src|音频地址|String|
 
 ### 示例展示
 
@@ -134,6 +175,7 @@ npm install --save wx-minicomponent
 
 ### 更新历史
 
+- 2020-5-17: 完善组件参数文档，增加wxParse对audio标签标题，副标题的解析功能
 - 2020-5-13: 增加css，html，ts，sql，markdown代码高亮提示支持
 - 2020-5-6：增加图片预览功能
 
