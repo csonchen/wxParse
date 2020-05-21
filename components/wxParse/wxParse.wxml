@@ -58,18 +58,26 @@
 
     <!-- img类型 -->
     <block wx:elif="{{item.tag == 'img'}}">
-      <image 
-        class="{{item.classStr}} wxParse-{{item.tag}}" 
-        data-from="{{item.from}}" 
-        data-src="{{item.attr.src}}" 
-        data-idx="{{item.imgIndex}}" 
-        src="{{item.attr.src}}" 
-        mode="aspectFit" 
-        bindtap="wxParseImgTap"
-        bindload="wxParseImgLoad"  
-        mode="widthFix" 
-        style="width:{{width}}px;"
-      />
+      <view class="wxParse-img-inner">
+        <image 
+          class="{{item.classStr}} wxParse-{{item.tag}} {{item.loaded ? 'wxParse-img-fadein' : ''}}" 
+          data-from="{{item.from}}" 
+          data-src="{{item.attr.src}}" 
+          data-idx="{{item.imgIndex}}" 
+          src="{{ item.loaded ? item.attr.src : '' }}" 
+          bindtap="wxParseImgTap"
+          mode="widthFix" 
+          style="width:{{width}}px;height:{{height}}px;"
+        />
+        <image hidden="{{item.loaded}}" class="img-loading" src="./images/loading.png" />
+        <image 
+          style="display: none;" 
+          mode="widthFix" 
+          data-from="{{item.from}}" 
+          src="{{ item.attr.src }}"
+          bindload="wxParseImgLoad" 
+        />
+      </view>
     </block>
 
     <!-- a类型 -->

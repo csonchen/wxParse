@@ -57,7 +57,11 @@ Component({
         
         //因为无法获取view宽度 需要自定义padding进行计算，稍后处理
         const recal = this._wxAutoImageCal(width, height)
-        this.setData({ width: recal.imageWidth })
+        this.setData({
+          width: recal.imageWidth,
+          height: recal.imageHeight,
+          [`nodesData[${0}].loaded`]: true,
+        })
       }
     },
 
@@ -69,7 +73,7 @@ Component({
       const { src } = e.target.dataset
       const bindName = 'wxParseData'
       const { imageUrls } = bindData(bindName)
-      wx.previewImage({
+      wx.previewImage({ 
         current: src,
         urls: imageUrls
       })
