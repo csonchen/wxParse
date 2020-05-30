@@ -17,7 +17,7 @@
         <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
           <view class="wxParse-ol-inner">
             <view class="mr5">{{index + 1}}. </view>
-            <view class="flex-full">
+            <view class="flex-full overflow-hide">
               <wxParse nodes="{{child}}"></wxParse>
             </view>
           </view>
@@ -31,7 +31,7 @@
         <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
           <view class="wxParse-ul-inner">
             <view class="wxParse-li-circle"></view>
-            <view class="flex-full">
+            <view class="flex-full overflow-hide">
               <wxParse nodes="{{child}}"></wxParse>
             </view>
           </view>
