@@ -1,5 +1,5 @@
-import HtmlToJson from '../../utils/html2json';
-import { getSystemInfo, bindData } from '../../utils/util';
+import HtmlToJson from './utils/html2json';
+import { getSystemInfo, bindData } from './utils/util';
 
 Component({
   properties: {

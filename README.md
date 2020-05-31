@@ -31,6 +31,7 @@
   - [x] video标签
   - [x] br标签
   - [x] button标签
+  - [x] h1, h2, h3, h4标签
   - [x] 文本节点
   - [x] 其余块级标签
   - [x] 其余行级标签
@@ -45,7 +46,7 @@ npm install --save wx-minicomponent
 
 1. **原生组件使用方法**
 
-- 克隆 [项目](https://github.com/csonchen/wxParse) 代码，把 **components目录** 和 **utils目录** 拷贝到你的小程序根目录下面;
+- 克隆 [项目](https://github.com/csonchen/wxParse) 代码，把 **components目录** 拷贝到你的小程序根目录下面;
 
 - 在你的 **page页面** 对应的 `json` 文件引入 `wxParse` 组件
 
@@ -123,7 +124,7 @@ npm install --save wx-minicomponent
 
 ### 参数文档
 
-- **wxParse**
+- **wxParse：富文本解析组件**
 
 参数|说明|类型|例子
 :--|:--|:--|:--
@@ -143,9 +144,13 @@ ul|
 ol|
 img|
 button|
+h1|
+h2|
+h3|
+h4|
 ....|
 
-- **highLight**
+- **highLight：代码高亮解析组件**
 
 参数|说明|类型|例子
 :--|:--|:--|:--
@@ -155,7 +160,7 @@ language|代码语言类型|String|可选值："javascript/typescript/css/xml/sq
 **提示：如果是html语言，language的值为xml**
 
 
-- **wxAudio**
+- **wxAudio：仿微信公众号文章音频播放组件**
 
 参数|说明|类型|例子
 :--|:--|:--|:--
@@ -175,6 +180,7 @@ src|音频地址|String|
 
 ### 更新历史
 
+- 2020-5-31: 迁移utils目录到wxParse目录下
 - 2020-5-21: 富文本组件image标签添加loading过渡态，优化图片加载体验
 - 2020-5-17: 完善组件参数文档，增加wxParse对audio标签标题，副标题的解析功能
 - 2020-5-13: 增加css，html，ts，sql，markdown代码高亮提示支持
