@@ -92,7 +92,7 @@ npm install --save wx-minicomponent
 
 **提示：详细步骤可以参考小程序的[npm使用文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)**
 
-3. **补充组件**：代码高亮展示组件使用（目前只支持 `javascript` 语法，等我有时间再扩展别的语法）
+3. **补充组件：代码高亮展示组件使用**
 
 - 在 `page`的 `json` 文件里面引入 `highLight` 组件
 
@@ -129,6 +129,7 @@ npm install --save wx-minicomponent
 参数|说明|类型|例子
 :--|:--|:--|:--
 nodes|富文本字符|String|"\<div\>test\</div\>"
+language|语言|String| 可选："html" \| "markdown" ("md")
 
 **受信任的节点**
 
@@ -170,20 +171,34 @@ src|音频地址|String|
 
 ### 示例展示
 
-- 富文本解析
+1. **富文本解析**
+
+- **html文本解析实例**
 
 ![示例](/static/wxParse.gif)
 
-- 代码高亮
+- **markdown文本解析实例**
+
+![示例](/static/md.png)
+
+2. **代码高亮**
 
 ![示例](/static/wxHigh.gif)
 
 ### 更新历史
 
-- 2020-5-31: 迁移utils目录到wxParse目录下
+- 2020-5-31
+
+ 1. 迁移utils目录到wxParse目录下；
+
+ 2. 富文本增加markdown文本解析支持；
+
 - 2020-5-21: 富文本组件image标签添加loading过渡态，优化图片加载体验
+
 - 2020-5-17: 完善组件参数文档，增加wxParse对audio标签标题，副标题的解析功能
+
 - 2020-5-13: 增加css，html，ts，sql，markdown代码高亮提示支持
+
 - 2020-5-6：增加图片预览功能
 
 ### TODO
