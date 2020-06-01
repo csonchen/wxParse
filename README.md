@@ -173,7 +173,7 @@ src|音频地址|String|
 
 1. **富文本解析**
 
-- **html文本解析实例**
+- **html文本解析实例**
 
 ![示例](/static/wxParse.gif)
 
