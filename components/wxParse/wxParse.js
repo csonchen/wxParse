@@ -5,26 +5,26 @@ import { getSystemInfo, bindData } from './utils/util';
 Component({
   properties: {
     nodes: {
-      type: null
+      type: null,
+      observer(val) {
+        const { language } = this.properties
+        if (val) {
+          if (language === 'html') {
+            this._parseNodes(val)
+          }
+
+          if (language === 'markdown' || language === 'md') {
+            const converter = new showdown.Converter();
+            const parseNodes = converter.makeHtml(val);
+            this._parseNodes(parseNodes)
+          }
+        }
+      }
     },
 
     language: {
       type: String,
       value: 'html' // 可选：html | markdown (md)
-    }
-  },
-
-  attached() {
-    const { language, nodes } = this.data
-
-    if (language === 'html') {
-      this._parseNodes(nodes)
-    }
-
-    if (language === 'markdown' || language === 'md') {
-      const converter = new showdown.Converter();
-      const parseNodes = converter.makeHtml(nodes);
-      this._parseNodes(parseNodes)
     }
   },
 
