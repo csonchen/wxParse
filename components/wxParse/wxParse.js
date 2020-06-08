@@ -1,31 +1,23 @@
-import HtmlToJson from './utils/html2json';
-import showdown from './utils/showdown.js';
-import { getSystemInfo, bindData } from './utils/util';
+import HtmlToJson from '../../utils/html2json';
+import { getSystemInfo, bindData } from '../../utils/util';
 
 Component({
   properties: {
     nodes: {
       type: null,
       observer(val) {
-        const { language } = this.properties
         if (val) {
-          if (language === 'html') {
-            this._parseNodes(val)
-          }
-
-          if (language === 'markdown' || language === 'md') {
-            const converter = new showdown.Converter();
-            const parseNodes = converter.makeHtml(val);
-            this._parseNodes(parseNodes)
+          if (typeof val === 'string') { // 初始为html富文本字符串
+            this._parseHtml(val)
+          } else if (Array.isArray(val)) { // html 富文本解析成节点数组
+            this.setData({ nodesData: val })
+          } else { // 其余为单个节点对象
+            const nodesData = [ val ]
+            this.setData({ nodesData })
           }
         }
       }
     },
-
-    language: {
-      type: String,
-      value: 'html' // 可选：html | markdown (md)
-    }
   },
 
   data: {
@@ -42,6 +34,7 @@ Component({
 
       transData.view = {}
       transData.view.imagePadding = 0
+
       this.setData({
         nodesData: transData.nodes,
         bindData: {
@@ -50,17 +43,6 @@ Component({
       })
       bindData(bindName, transData)
       console.log(this.data)
-    },
-
-    _parseNodes(nodes) {
-      if (typeof nodes === 'string') { // 初始为html富文本字符串
-        this._parseHtml(nodes)
-      } else if (Array.isArray(nodes)) { // html 富文本解析成节点数组
-        this.setData({ nodesData: nodes })
-      } else { // 其余为单个节点对象
-        const nodesData = [ nodes ]
-        this.setData({ nodesData })
-      }
     },
 
     /**
