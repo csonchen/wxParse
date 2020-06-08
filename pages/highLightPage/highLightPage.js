@@ -1,84 +1,18 @@
-const jsCode = `init = jQuery.fn.init = function( selector, context, root ) {
-  var match, elem;
-
-  // v1.4之后，可以创建不包含任何DOM节点的空jQuery对象
-  if ( !selector ) {
-    return this
-  }
-
-  // 处理字符串
-  if ( typeof selector === 'string' ) {
-    // 处理 HTML 字符串
-    if ( selector[ 0 ] === '<' && selector[ selector.length - 1 ] === '>' && selector.length >= 3) {
-        // ....
-
-    // 其它字符串，当做选择器处理    
-    } else {
-      match = rquickExpr.exec( selector )
-    }
-
-  // 处理 DOM 节点 => $(DOMElement)  
-  } else if ( selector.nodeType ) {
-    // .....
-
-  // 处理函数 => $(function)
-  } else if ( typeof selector === 'function' ) {
-    // ....
-  }
-
-  // 处理其它情况
-  return jQuery.makeArray( selector, this )
-}`
-
-const cssCode = `
-.flex {
-  display: flex;
-}
-.flex-center {
-  justify-content: center;
-}
-.flex-middle {
-  align-items: center;
-}
-`
-
-const htmlCode = `
-<div>
-  <p class="font12">我是标题</p>
-  <text>我是文本</text>
-</div>
-`
-
-const markdownCode = `
-## 我是标题
-
-### 我是副标题
-
-1. 我是列表1
-2. 我是列表2
-`
-
-const sqlCode = `
-select * from t_ad where id = 1
-
-select ad_name from t_ad where id = 1
-`
-
-const tsCode = `
-const id: number;
-
-const setId: (id: number) => {
-  this.id = id
-}
-`
-
+"use strict";
+var jsCode = "init = jQuery.fn.init = function( selector, context, root ) {\n  var match, elem;\n\n  // v1.4\u4E4B\u540E\uFF0C\u53EF\u4EE5\u521B\u5EFA\u4E0D\u5305\u542B\u4EFB\u4F55DOM\u8282\u70B9\u7684\u7A7AjQuery\u5BF9\u8C61\n  if ( !selector ) {\n    return this\n  }\n\n  // \u5904\u7406\u5B57\u7B26\u4E32\n  if ( typeof selector === 'string' ) {\n    // \u5904\u7406 HTML \u5B57\u7B26\u4E32\n    if ( selector[ 0 ] === '<' && selector[ selector.length - 1 ] === '>' && selector.length >= 3) {\n        // ....\n\n    // \u5176\u5B83\u5B57\u7B26\u4E32\uFF0C\u5F53\u505A\u9009\u62E9\u5668\u5904\u7406    \n    } else {\n      match = rquickExpr.exec( selector )\n    }\n\n  // \u5904\u7406 DOM \u8282\u70B9 => $(DOMElement)  \n  } else if ( selector.nodeType ) {\n    // .....\n\n  // \u5904\u7406\u51FD\u6570 => $(function)\n  } else if ( typeof selector === 'function' ) {\n    // ....\n  }\n\n  // \u5904\u7406\u5176\u5B83\u60C5\u51B5\n  return jQuery.makeArray( selector, this )\n}";
+var cssCode = "\n.flex {\n  display: flex;\n}\n.flex-center {\n  justify-content: center;\n}\n.flex-middle {\n  align-items: center;\n}\n";
+var htmlCode = "\n<div>\n  <p class=\"font12\">\u6211\u662F\u6807\u9898</p>\n  <text>\u6211\u662F\u6587\u672C</text>\n</div>\n";
+var markdownCode = "\n## \u6211\u662F\u6807\u9898\n\n### \u6211\u662F\u526F\u6807\u9898\n\n1. \u6211\u662F\u5217\u88681\n2. \u6211\u662F\u5217\u88682\n";
+var sqlCode = "\nselect * from t_ad where id = 1\n\nselect ad_name from t_ad where id = 1\n";
+var tsCode = "\nconst id: number;\n\nconst setId: (id: number) => {\n  this.id = id\n}\n";
 Page({
-  data: {
-    codeText: `${jsCode}`,
-    cssCode: `${cssCode}`,
-    htmlCode: `${htmlCode}`,
-    markdownCode: `${markdownCode}`,
-    sqlCode: `${sqlCode}`,
-    tsCode: `${tsCode}`,
-  },
-})
+    data: {
+        codeText: "" + jsCode,
+        cssCode: "" + cssCode,
+        htmlCode: "" + htmlCode,
+        markdownCode: "" + markdownCode,
+        sqlCode: "" + sqlCode,
+        tsCode: "" + tsCode,
+    },
+});
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaGlnaExpZ2h0UGFnZS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbImhpZ2hMaWdodFBhZ2UudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IjtBQUFBLElBQU0sTUFBTSxHQUFHLCs4QkE4QmIsQ0FBQTtBQUVGLElBQU0sT0FBTyxHQUFHLDRIQVVmLENBQUE7QUFFRCxJQUFNLFFBQVEsR0FBRyxnSEFLaEIsQ0FBQTtBQUVELElBQU0sWUFBWSxHQUFHLHFJQU9wQixDQUFBO0FBRUQsSUFBTSxPQUFPLEdBQUcsOEVBSWYsQ0FBQTtBQUVELElBQU0sTUFBTSxHQUFHLDRFQU1kLENBQUE7QUFFRCxJQUFJLENBQUM7SUFDSCxJQUFJLEVBQUU7UUFDSixRQUFRLEVBQUUsS0FBRyxNQUFRO1FBQ3JCLE9BQU8sRUFBRSxLQUFHLE9BQVM7UUFDckIsUUFBUSxFQUFFLEtBQUcsUUFBVTtRQUN2QixZQUFZLEVBQUUsS0FBRyxZQUFjO1FBQy9CLE9BQU8sRUFBRSxLQUFHLE9BQVM7UUFDckIsTUFBTSxFQUFFLEtBQUcsTUFBUTtLQUNwQjtDQUNGLENBQUMsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGpzQ29kZSA9IGBpbml0ID0galF1ZXJ5LmZuLmluaXQgPSBmdW5jdGlvbiggc2VsZWN0b3IsIGNvbnRleHQsIHJvb3QgKSB7XG4gIHZhciBtYXRjaCwgZWxlbTtcblxuICAvLyB2MS405LmL5ZCO77yM5Y+v5Lul5Yib5bu65LiN5YyF5ZCr5Lu75L2VRE9N6IqC54K555qE56m6alF1ZXJ55a+56LGhXG4gIGlmICggIXNlbGVjdG9yICkge1xuICAgIHJldHVybiB0aGlzXG4gIH1cblxuICAvLyDlpITnkIblrZfnrKbkuLJcbiAgaWYgKCB0eXBlb2Ygc2VsZWN0b3IgPT09ICdzdHJpbmcnICkge1xuICAgIC8vIOWkhOeQhiBIVE1MIOWtl+espuS4slxuICAgIGlmICggc2VsZWN0b3JbIDAgXSA9PT0gJzwnICYmIHNlbGVjdG9yWyBzZWxlY3Rvci5sZW5ndGggLSAxIF0gPT09ICc+JyAmJiBzZWxlY3Rvci5sZW5ndGggPj0gMykge1xuICAgICAgICAvLyAuLi4uXG5cbiAgICAvLyDlhbblroPlrZfnrKbkuLLvvIzlvZPlgZrpgInmi6nlmajlpITnkIYgICAgXG4gICAgfSBlbHNlIHtcbiAgICAgIG1hdGNoID0gcnF1aWNrRXhwci5leGVjKCBzZWxlY3RvciApXG4gICAgfVxuXG4gIC8vIOWkhOeQhiBET00g6IqC54K5ID0+ICQoRE9NRWxlbWVudCkgIFxuICB9IGVsc2UgaWYgKCBzZWxlY3Rvci5ub2RlVHlwZSApIHtcbiAgICAvLyAuLi4uLlxuXG4gIC8vIOWkhOeQhuWHveaVsCA9PiAkKGZ1bmN0aW9uKVxuICB9IGVsc2UgaWYgKCB0eXBlb2Ygc2VsZWN0b3IgPT09ICdmdW5jdGlvbicgKSB7XG4gICAgLy8gLi4uLlxuICB9XG5cbiAgLy8g5aSE55CG5YW25a6D5oOF5Ya1XG4gIHJldHVybiBqUXVlcnkubWFrZUFycmF5KCBzZWxlY3RvciwgdGhpcyApXG59YFxuXG5jb25zdCBjc3NDb2RlID0gYFxuLmZsZXgge1xuICBkaXNwbGF5OiBmbGV4O1xufVxuLmZsZXgtY2VudGVyIHtcbiAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59XG4uZmxleC1taWRkbGUge1xuICBhbGlnbi1pdGVtczogY2VudGVyO1xufVxuYFxuXG5jb25zdCBodG1sQ29kZSA9IGBcbjxkaXY+XG4gIDxwIGNsYXNzPVwiZm9udDEyXCI+5oiR5piv5qCH6aKYPC9wPlxuICA8dGV4dD7miJHmmK/mlofmnKw8L3RleHQ+XG48L2Rpdj5cbmBcblxuY29uc3QgbWFya2Rvd25Db2RlID0gYFxuIyMg5oiR5piv5qCH6aKYXG5cbiMjIyDmiJHmmK/lia/moIfpophcblxuMS4g5oiR5piv5YiX6KGoMVxuMi4g5oiR5piv5YiX6KGoMlxuYFxuXG5jb25zdCBzcWxDb2RlID0gYFxuc2VsZWN0ICogZnJvbSB0X2FkIHdoZXJlIGlkID0gMVxuXG5zZWxlY3QgYWRfbmFtZSBmcm9tIHRfYWQgd2hlcmUgaWQgPSAxXG5gXG5cbmNvbnN0IHRzQ29kZSA9IGBcbmNvbnN0IGlkOiBudW1iZXI7XG5cbmNvbnN0IHNldElkOiAoaWQ6IG51bWJlcikgPT4ge1xuICB0aGlzLmlkID0gaWRcbn1cbmBcblxuUGFnZSh7XG4gIGRhdGE6IHtcbiAgICBjb2RlVGV4dDogYCR7anNDb2RlfWAsXG4gICAgY3NzQ29kZTogYCR7Y3NzQ29kZX1gLFxuICAgIGh0bWxDb2RlOiBgJHtodG1sQ29kZX1gLFxuICAgIG1hcmtkb3duQ29kZTogYCR7bWFya2Rvd25Db2RlfWAsXG4gICAgc3FsQ29kZTogYCR7c3FsQ29kZX1gLFxuICAgIHRzQ29kZTogYCR7dHNDb2RlfWAsXG4gIH0sXG59KSJdfQ==

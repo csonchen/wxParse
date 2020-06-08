@@ -3,77 +3,17 @@
 	"packOptions": {
 		"ignore": []
 	},
-	"setting": {
-		"urlCheck": true,
-		"es6": true,
-		"postcss": true,
-		"preloadBackgroundData": false,
-		"minified": true,
-		"newFeature": true,
-		"coverView": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"showShadowRootInWxmlPanel": true,
-		"scopeDataCheck": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		},
-		"useCompilerModule": true,
-		"userConfirmedUseCompilerModuleSwitch": false
-	},
 	"compileType": "miniprogram",
-	"libVersion": "2.10.4",
-	"appid": "wx23227b31334fcf61",
+	"libVersion": "2.8.2",
 	"projectname": "wxParse",
-	"debugOptions": {
-		"hidedInDevtools": []
+	"scripts": {
+		"beforeCompile": "npm run tsc",
+		"beforePreview": "npm run tsc",
+		"beforeUpload": "npm run tsc"
 	},
-	"isGameTourist": false,
+	"setting": {},
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"currentL": -1,
-			"list": []
-		},
-		"gamePlugin": {
-			"current": -1,
-			"list": []
-		},
-		"miniprogram": {
-			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/index/index",
-					"pathName": "pages/richTextPage/richTextPage",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/highLightPage/highLightPage",
-					"pathName": "pages/highLightPage/highLightPage",
-					"scene": null
-				}
-			]
-		}
-	}
+	"appid": "wxb2e4377126b41acc",
+	"condition": {}
 }
