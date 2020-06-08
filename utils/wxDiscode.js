@@ -1,207 +1,187 @@
-// HTML 支持的数学符号
-function strNumDiscode(str){
-  str = str.replace(/&forall;/g, '∀');
-  str = str.replace(/&part;/g, '∂');
-  str = str.replace(/&exists;/g, '∃');
-  str = str.replace(/&empty;/g, '∅');
-  str = str.replace(/&nabla;/g, '∇');
-  str = str.replace(/&isin;/g, '∈');
-  str = str.replace(/&notin;/g, '∉');
-  str = str.replace(/&ni;/g, '∋');
-  str = str.replace(/&prod;/g, '∏');
-  str = str.replace(/&sum;/g, '∑');
-  str = str.replace(/&minus;/g, '−');
-  str = str.replace(/&lowast;/g, '∗');
-  str = str.replace(/&radic;/g, '√');
-  str = str.replace(/&prop;/g, '∝');
-  str = str.replace(/&infin;/g, '∞');
-  str = str.replace(/&ang;/g, '∠');
-  str = str.replace(/&and;/g, '∧');
-  str = str.replace(/&or;/g, '∨');
-  str = str.replace(/&cap;/g, '∩');
-  str = str.replace(/&cap;/g, '∪');
-  str = str.replace(/&int;/g, '∫');
-  str = str.replace(/&there4;/g, '∴');
-  str = str.replace(/&sim;/g, '∼');
-  str = str.replace(/&cong;/g, '≅');
-  str = str.replace(/&asymp;/g, '≈');
-  str = str.replace(/&ne;/g, '≠');
-  str = str.replace(/&le;/g, '≤');
-  str = str.replace(/&ge;/g, '≥');
-  str = str.replace(/&sub;/g, '⊂');
-  str = str.replace(/&sup;/g, '⊃');
-  str = str.replace(/&nsub;/g, '⊄');
-  str = str.replace(/&sube;/g, '⊆');
-  str = str.replace(/&supe;/g, '⊇');
-  str = str.replace(/&oplus;/g, '⊕');
-  str = str.replace(/&otimes;/g, '⊗');
-  str = str.replace(/&perp;/g, '⊥');
-  str = str.replace(/&sdot;/g, '⋅');
-  return str;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+function strNumDiscode(str) {
+    str = str.replace(/&forall;/g, '∀');
+    str = str.replace(/&part;/g, '∂');
+    str = str.replace(/&exists;/g, '∃');
+    str = str.replace(/&empty;/g, '∅');
+    str = str.replace(/&nabla;/g, '∇');
+    str = str.replace(/&isin;/g, '∈');
+    str = str.replace(/&notin;/g, '∉');
+    str = str.replace(/&ni;/g, '∋');
+    str = str.replace(/&prod;/g, '∏');
+    str = str.replace(/&sum;/g, '∑');
+    str = str.replace(/&minus;/g, '−');
+    str = str.replace(/&lowast;/g, '∗');
+    str = str.replace(/&radic;/g, '√');
+    str = str.replace(/&prop;/g, '∝');
+    str = str.replace(/&infin;/g, '∞');
+    str = str.replace(/&ang;/g, '∠');
+    str = str.replace(/&and;/g, '∧');
+    str = str.replace(/&or;/g, '∨');
+    str = str.replace(/&cap;/g, '∩');
+    str = str.replace(/&cap;/g, '∪');
+    str = str.replace(/&int;/g, '∫');
+    str = str.replace(/&there4;/g, '∴');
+    str = str.replace(/&sim;/g, '∼');
+    str = str.replace(/&cong;/g, '≅');
+    str = str.replace(/&asymp;/g, '≈');
+    str = str.replace(/&ne;/g, '≠');
+    str = str.replace(/&le;/g, '≤');
+    str = str.replace(/&ge;/g, '≥');
+    str = str.replace(/&sub;/g, '⊂');
+    str = str.replace(/&sup;/g, '⊃');
+    str = str.replace(/&nsub;/g, '⊄');
+    str = str.replace(/&sube;/g, '⊆');
+    str = str.replace(/&supe;/g, '⊇');
+    str = str.replace(/&oplus;/g, '⊕');
+    str = str.replace(/&otimes;/g, '⊗');
+    str = str.replace(/&perp;/g, '⊥');
+    str = str.replace(/&sdot;/g, '⋅');
+    return str;
 }
-
-//HTML 支持的希腊字母
-function strGreeceDiscode(str){
-  str = str.replace(/&Alpha;/g, 'Α');
-  str = str.replace(/&Beta;/g, 'Β');
-  str = str.replace(/&Gamma;/g, 'Γ');
-  str = str.replace(/&Delta;/g, 'Δ');
-  str = str.replace(/&Epsilon;/g, 'Ε');
-  str = str.replace(/&Zeta;/g, 'Ζ');
-  str = str.replace(/&Eta;/g, 'Η');
-  str = str.replace(/&Theta;/g, 'Θ');
-  str = str.replace(/&Iota;/g, 'Ι');
-  str = str.replace(/&Kappa;/g, 'Κ');
-  str = str.replace(/&Lambda;/g, 'Λ');
-  str = str.replace(/&Mu;/g, 'Μ');
-  str = str.replace(/&Nu;/g, 'Ν');
-  str = str.replace(/&Xi;/g, 'Ν');
-  str = str.replace(/&Omicron;/g, 'Ο');
-  str = str.replace(/&Pi;/g, 'Π');
-  str = str.replace(/&Rho;/g, 'Ρ');
-  str = str.replace(/&Sigma;/g, 'Σ');
-  str = str.replace(/&Tau;/g, 'Τ');
-  str = str.replace(/&Upsilon;/g, 'Υ');
-  str = str.replace(/&Phi;/g, 'Φ');
-  str = str.replace(/&Chi;/g, 'Χ');
-  str = str.replace(/&Psi;/g, 'Ψ');
-  str = str.replace(/&Omega;/g, 'Ω');
-
-  str = str.replace(/&alpha;/g, 'α');
-  str = str.replace(/&beta;/g, 'β');
-  str = str.replace(/&gamma;/g, 'γ');
-  str = str.replace(/&delta;/g, 'δ');
-  str = str.replace(/&epsilon;/g, 'ε');
-  str = str.replace(/&zeta;/g, 'ζ');
-  str = str.replace(/&eta;/g, 'η');
-  str = str.replace(/&theta;/g, 'θ');
-  str = str.replace(/&iota;/g, 'ι');
-  str = str.replace(/&kappa;/g, 'κ');
-  str = str.replace(/&lambda;/g, 'λ');
-  str = str.replace(/&mu;/g, 'μ');
-  str = str.replace(/&nu;/g, 'ν');
-  str = str.replace(/&xi;/g, 'ξ');
-  str = str.replace(/&omicron;/g, 'ο');
-  str = str.replace(/&pi;/g, 'π');
-  str = str.replace(/&rho;/g, 'ρ');
-  str = str.replace(/&sigmaf;/g, 'ς');
-  str = str.replace(/&sigma;/g, 'σ');
-  str = str.replace(/&tau;/g, 'τ');
-  str = str.replace(/&upsilon;/g, 'υ');
-  str = str.replace(/&phi;/g, 'φ');
-  str = str.replace(/&chi;/g, 'χ');
-  str = str.replace(/&psi;/g, 'ψ');
-  str = str.replace(/&omega;/g, 'ω');
-  str = str.replace(/&thetasym;/g, 'ϑ');
-  str = str.replace(/&upsih;/g, 'ϒ');
-  str = str.replace(/&piv;/g, 'ϖ');
-  str = str.replace(/&middot;/g, '·');
-  return str;
+function strGreeceDiscode(str) {
+    str = str.replace(/&Alpha;/g, 'Α');
+    str = str.replace(/&Beta;/g, 'Β');
+    str = str.replace(/&Gamma;/g, 'Γ');
+    str = str.replace(/&Delta;/g, 'Δ');
+    str = str.replace(/&Epsilon;/g, 'Ε');
+    str = str.replace(/&Zeta;/g, 'Ζ');
+    str = str.replace(/&Eta;/g, 'Η');
+    str = str.replace(/&Theta;/g, 'Θ');
+    str = str.replace(/&Iota;/g, 'Ι');
+    str = str.replace(/&Kappa;/g, 'Κ');
+    str = str.replace(/&Lambda;/g, 'Λ');
+    str = str.replace(/&Mu;/g, 'Μ');
+    str = str.replace(/&Nu;/g, 'Ν');
+    str = str.replace(/&Xi;/g, 'Ν');
+    str = str.replace(/&Omicron;/g, 'Ο');
+    str = str.replace(/&Pi;/g, 'Π');
+    str = str.replace(/&Rho;/g, 'Ρ');
+    str = str.replace(/&Sigma;/g, 'Σ');
+    str = str.replace(/&Tau;/g, 'Τ');
+    str = str.replace(/&Upsilon;/g, 'Υ');
+    str = str.replace(/&Phi;/g, 'Φ');
+    str = str.replace(/&Chi;/g, 'Χ');
+    str = str.replace(/&Psi;/g, 'Ψ');
+    str = str.replace(/&Omega;/g, 'Ω');
+    str = str.replace(/&alpha;/g, 'α');
+    str = str.replace(/&beta;/g, 'β');
+    str = str.replace(/&gamma;/g, 'γ');
+    str = str.replace(/&delta;/g, 'δ');
+    str = str.replace(/&epsilon;/g, 'ε');
+    str = str.replace(/&zeta;/g, 'ζ');
+    str = str.replace(/&eta;/g, 'η');
+    str = str.replace(/&theta;/g, 'θ');
+    str = str.replace(/&iota;/g, 'ι');
+    str = str.replace(/&kappa;/g, 'κ');
+    str = str.replace(/&lambda;/g, 'λ');
+    str = str.replace(/&mu;/g, 'μ');
+    str = str.replace(/&nu;/g, 'ν');
+    str = str.replace(/&xi;/g, 'ξ');
+    str = str.replace(/&omicron;/g, 'ο');
+    str = str.replace(/&pi;/g, 'π');
+    str = str.replace(/&rho;/g, 'ρ');
+    str = str.replace(/&sigmaf;/g, 'ς');
+    str = str.replace(/&sigma;/g, 'σ');
+    str = str.replace(/&tau;/g, 'τ');
+    str = str.replace(/&upsilon;/g, 'υ');
+    str = str.replace(/&phi;/g, 'φ');
+    str = str.replace(/&chi;/g, 'χ');
+    str = str.replace(/&psi;/g, 'ψ');
+    str = str.replace(/&omega;/g, 'ω');
+    str = str.replace(/&thetasym;/g, 'ϑ');
+    str = str.replace(/&upsih;/g, 'ϒ');
+    str = str.replace(/&piv;/g, 'ϖ');
+    str = str.replace(/&middot;/g, '·');
+    return str;
 }
-
-// 
-
-function strcharacterDiscode(str){
-  // 加入常用解析
-  str = str.replace(/&nbsp;/g, ' ');
-  str = str.replace(/&quot;/g, "'");
-  str = str.replace(/&amp;/g, '&');
-  // str = str.replace(/&lt;/g, '‹');
-  // str = str.replace(/&gt;/g, '›');
-
-  str = str.replace(/&lt;/g, '<');
-  str = str.replace(/&gt;/g, '>');
-  str = str.replace(/&#8226;/g, '•');
-
-  return str;
+function strcharacterDiscode(str) {
+    str = str.replace(/&nbsp;/g, ' ');
+    str = str.replace(/&quot;/g, "'");
+    str = str.replace(/&amp;/g, '&');
+    str = str.replace(/&lt;/g, '<');
+    str = str.replace(/&gt;/g, '>');
+    str = str.replace(/&#8226;/g, '•');
+    return str;
 }
-
-// HTML 支持的其他实体
-function strOtherDiscode(str){
-  str = str.replace(/&OElig;/g, 'Œ');
-  str = str.replace(/&oelig;/g, 'œ');
-  str = str.replace(/&Scaron;/g, 'Š');
-  str = str.replace(/&scaron;/g, 'š');
-  str = str.replace(/&Yuml;/g, 'Ÿ');
-  str = str.replace(/&fnof;/g, 'ƒ');
-  str = str.replace(/&circ;/g, 'ˆ');
-  str = str.replace(/&tilde;/g, '˜');
-  str = str.replace(/&ensp;/g, '');
-  str = str.replace(/&emsp;/g, '');
-  str = str.replace(/&thinsp;/g, '');
-  str = str.replace(/&zwnj;/g, '');
-  str = str.replace(/&zwj;/g, '');
-  str = str.replace(/&lrm;/g, '');
-  str = str.replace(/&rlm;/g, '');
-  str = str.replace(/&ndash;/g, '–');
-  str = str.replace(/&mdash;/g, '—');
-  str = str.replace(/&lsquo;/g, '‘');
-  str = str.replace(/&rsquo;/g, '’');
-  str = str.replace(/&sbquo;/g, '‚');
-  str = str.replace(/&ldquo;/g, '“');
-  str = str.replace(/&rdquo;/g, '”');
-  str = str.replace(/&bdquo;/g, '„');
-  str = str.replace(/&dagger;/g, '†');
-  str = str.replace(/&Dagger;/g, '‡');
-  str = str.replace(/&bull;/g, '•');
-  str = str.replace(/&hellip;/g, '…');
-  str = str.replace(/&permil;/g, '‰');
-  str = str.replace(/&prime;/g, '′');
-  str = str.replace(/&Prime;/g, '″');
-  str = str.replace(/&lsaquo;/g, '‹');
-  str = str.replace(/&rsaquo;/g, '›');
-  str = str.replace(/&oline;/g, '‾');
-  str = str.replace(/&euro;/g, '€');
-  str = str.replace(/&trade;/g, '™');
-
-  str = str.replace(/&larr;/g, '←');
-  str = str.replace(/&uarr;/g, '↑');
-  str = str.replace(/&rarr;/g, '→');
-  str = str.replace(/&darr;/g, '↓');
-  str = str.replace(/&harr;/g, '↔');
-  str = str.replace(/&crarr;/g, '↵');
-  str = str.replace(/&lceil;/g, '⌈');
-  str = str.replace(/&rceil;/g, '⌉');
-
-  str = str.replace(/&lfloor;/g, '⌊');
-  str = str.replace(/&rfloor;/g, '⌋');
-  str = str.replace(/&loz;/g, '◊');
-  str = str.replace(/&spades;/g, '♠');
-  str = str.replace(/&clubs;/g, '♣');
-  str = str.replace(/&hearts;/g, '♥');
-
-  str = str.replace(/&diams;/g, '♦');
-  str = str.replace(/&#39;/g, '\'');
-  return str;
+function strOtherDiscode(str) {
+    str = str.replace(/&OElig;/g, 'Œ');
+    str = str.replace(/&oelig;/g, 'œ');
+    str = str.replace(/&Scaron;/g, 'Š');
+    str = str.replace(/&scaron;/g, 'š');
+    str = str.replace(/&Yuml;/g, 'Ÿ');
+    str = str.replace(/&fnof;/g, 'ƒ');
+    str = str.replace(/&circ;/g, 'ˆ');
+    str = str.replace(/&tilde;/g, '˜');
+    str = str.replace(/&ensp;/g, '');
+    str = str.replace(/&emsp;/g, '');
+    str = str.replace(/&thinsp;/g, '');
+    str = str.replace(/&zwnj;/g, '');
+    str = str.replace(/&zwj;/g, '');
+    str = str.replace(/&lrm;/g, '');
+    str = str.replace(/&rlm;/g, '');
+    str = str.replace(/&ndash;/g, '–');
+    str = str.replace(/&mdash;/g, '—');
+    str = str.replace(/&lsquo;/g, '‘');
+    str = str.replace(/&rsquo;/g, '’');
+    str = str.replace(/&sbquo;/g, '‚');
+    str = str.replace(/&ldquo;/g, '“');
+    str = str.replace(/&rdquo;/g, '”');
+    str = str.replace(/&bdquo;/g, '„');
+    str = str.replace(/&dagger;/g, '†');
+    str = str.replace(/&Dagger;/g, '‡');
+    str = str.replace(/&bull;/g, '•');
+    str = str.replace(/&hellip;/g, '…');
+    str = str.replace(/&permil;/g, '‰');
+    str = str.replace(/&prime;/g, '′');
+    str = str.replace(/&Prime;/g, '″');
+    str = str.replace(/&lsaquo;/g, '‹');
+    str = str.replace(/&rsaquo;/g, '›');
+    str = str.replace(/&oline;/g, '‾');
+    str = str.replace(/&euro;/g, '€');
+    str = str.replace(/&trade;/g, '™');
+    str = str.replace(/&larr;/g, '←');
+    str = str.replace(/&uarr;/g, '↑');
+    str = str.replace(/&rarr;/g, '→');
+    str = str.replace(/&darr;/g, '↓');
+    str = str.replace(/&harr;/g, '↔');
+    str = str.replace(/&crarr;/g, '↵');
+    str = str.replace(/&lceil;/g, '⌈');
+    str = str.replace(/&rceil;/g, '⌉');
+    str = str.replace(/&lfloor;/g, '⌊');
+    str = str.replace(/&rfloor;/g, '⌋');
+    str = str.replace(/&loz;/g, '◊');
+    str = str.replace(/&spades;/g, '♠');
+    str = str.replace(/&clubs;/g, '♣');
+    str = str.replace(/&hearts;/g, '♥');
+    str = str.replace(/&diams;/g, '♦');
+    str = str.replace(/&#39;/g, '\'');
+    return str;
 }
-
-function strMoreDiscode(str){
-  str = str.replace(/\r\n/g,"");  
-  str = str.replace(/\n/g,"");
-
-  // str = str.replace(/code/g,"wxxxcode-style");
-  return str;
+function strMoreDiscode(str) {
+    str = str.replace(/\r\n/g, "");
+    str = str.replace(/\n/g, "");
+    return str;
 }
-
-function strDiscode(str){
-  str = strNumDiscode(str);
-  str = strGreeceDiscode(str);
-  str = strcharacterDiscode(str);
-  str = strOtherDiscode(str);
-  str = strMoreDiscode(str);
-  return str;
+function strDiscode(str) {
+    str = strNumDiscode(str);
+    str = strGreeceDiscode(str);
+    str = strcharacterDiscode(str);
+    str = strOtherDiscode(str);
+    str = strMoreDiscode(str);
+    return str;
 }
-function urlToHttpUrl(url,rep){
-  
-  var patt1 = new RegExp("^//");
-  var result = patt1.test(url);
-  if(result){
-      url = rep+":"+url;
-  }
-  return  url;
+function urlToHttpUrl(url, rep) {
+    var patt1 = new RegExp("^//");
+    var result = patt1.test(url);
+    if (result) {
+        url = rep + ":" + url;
+    }
+    return url;
 }
-
-module.exports = {
-  strDiscode:strDiscode,
-  urlToHttpUrl:urlToHttpUrl
-}
+exports.default = {
+    strDiscode: strDiscode,
+    urlToHttpUrl: urlToHttpUrl
+};
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoid3hEaXNjb2RlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsid3hEaXNjb2RlLnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQ0EsU0FBUyxhQUFhLENBQUMsR0FBVztJQUNoQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxXQUFXLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDcEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFdBQVcsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNwQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsT0FBTyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2hDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxRQUFRLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDakMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFdBQVcsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNwQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxRQUFRLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDakMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsUUFBUSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2pDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLE9BQU8sRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNoQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxRQUFRLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDakMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsUUFBUSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2pDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFFBQVEsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNqQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxXQUFXLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDcEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsUUFBUSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2pDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsT0FBTyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2hDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLE9BQU8sRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNoQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxPQUFPLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDaEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsUUFBUSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2pDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFFBQVEsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNqQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxTQUFTLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsV0FBVyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ3BDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxTQUFTLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbEMsT0FBTyxHQUFHLENBQUM7QUFDYixDQUFDO0FBR0QsU0FBUyxnQkFBZ0IsQ0FBQyxHQUFXO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxTQUFTLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxZQUFZLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDckMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFFBQVEsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNqQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxXQUFXLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDcEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsT0FBTyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2hDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLE9BQU8sRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNoQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxPQUFPLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDaEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsWUFBWSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ3JDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLE9BQU8sRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNoQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxRQUFRLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDakMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFFBQVEsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNqQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxZQUFZLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDckMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsUUFBUSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2pDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFFBQVEsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNqQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxRQUFRLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDakMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBRW5DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxTQUFTLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxZQUFZLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDckMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFFBQVEsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNqQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFB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QUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ25DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxXQUFXLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDcEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsV0FBVyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ3BDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxXQUFXLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDcEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsV0FBVyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ3BDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsV0FBVyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ3BDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFdBQVcsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNwQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUVuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxTQUFTLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFNBQVMsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNsQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxTQUFTLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsU0FBUyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2xDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsVUFBVSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBRW5DLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFdBQVcsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNwQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxXQUFXLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDcEMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsUUFBUSxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBQ2pDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFdBQVcsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNwQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxVQUFVLEVBQUUsR0FBRyxDQUFDLENBQUM7SUFDbkMsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsV0FBVyxFQUFFLEdBQUcsQ0FBQyxDQUFDO0lBRXBDLEdBQUcsR0FBRyxHQUFHLENBQUMsT0FBTyxDQUFDLFVBQVUsRUFBRSxHQUFHLENBQUMsQ0FBQztJQUNuQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxRQUFRLEVBQUUsSUFBSSxDQUFDLENBQUM7SUFDbEMsT0FBTyxHQUFHLENBQUM7QUFDYixDQUFDO0FBRUQsU0FBUyxjQUFjLENBQUMsR0FBVztJQUNqQyxHQUFHLEdBQUcsR0FBRyxDQUFDLE9BQU8sQ0FBQyxPQUFPLEVBQUUsRUFBRSxDQUFDLENBQUM7SUFDL0IsR0FBRyxHQUFHLEdBQUcsQ0FBQyxPQUFPLENBQUMsS0FBSyxFQUFFLEVBQUUsQ0FBQyxDQUFDO0lBRzdCLE9BQU8sR0FBRyxDQUFDO0FBQ2IsQ0FBQztBQUVELFNBQVMsVUFBVSxDQUFDLEdBQVc7SUFDN0IsR0FBRyxHQUFHLGFBQWEsQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUN6QixHQUFHLEdBQUcsZ0JBQWdCLENBQUMsR0FBRyxDQUFDLENBQUM7SUFDNUIsR0FBRyxHQUFHLG1CQUFtQixDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQy9CLEdBQUcsR0FBRyxlQUFlLENBQUMsR0FBRyxDQUFDLENBQUM7SUFDM0IsR0FBRyxHQUFHLGNBQWMsQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUMxQixPQUFPLEdBQUcsQ0FBQztBQUNiLENBQUM7QUFDRCxTQUFTLFlBQVksQ0FBQyxHQUFXLEVBQUUsR0FBb0I7SUFFckQsSUFBSSxLQUFLLEdBQUcsSUFBSSxNQUFNLENBQUMsS0FBSyxDQUFDLENBQUM7SUFDOUIsSUFBSSxNQUFNLEdBQUcsS0FBSyxDQUFDLElBQUksQ0FBQyxHQUFHLENBQUMsQ0FBQztJQUM3QixJQUFJLE1BQU0sRUFBRTtRQUNWLEdBQUcsR0FBRyxHQUFHLEdBQUcsR0FBRyxHQUFHLEdBQUcsQ0FBQztLQUN2QjtJQUNELE9BQU8sR0FBRyxDQUFDO0FBQ2IsQ0FBQztBQUVELGtCQUFlO0lBQ2IsVUFBVSxFQUFFLFVBQVU7SUFDdEIsWUFBWSxFQUFFLFlBQVk7Q0FDM0IsQ0FBQSIsInNvdXJjZXNDb250ZW50IjpbIi8vIEhUTUwg5pSv5oyB55qE5pWw5a2m56ym5Y+3XG5mdW5jdGlvbiBzdHJOdW1EaXNjb2RlKHN0cjogc3RyaW5nKSB7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mZm9yYWxsOy9nLCAn4oiAJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mcGFydDsvZywgJ+KIgicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmV4aXN0czsvZywgJ+KIgycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmVtcHR5Oy9nLCAn4oiFJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbmFibGE7L2csICfiiIcnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZpc2luOy9nLCAn4oiIJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbm90aW47L2csICfiiIknKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZuaTsvZywgJ+KIiycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnByb2Q7L2csICfiiI8nKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZzdW07L2csICfiiJEnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZtaW51czsvZywgJ+KIkicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmxvd2FzdDsvZywgJ+KIlycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnJhZGljOy9nLCAn4oiaJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mcHJvcDsvZywgJ+KInScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmluZmluOy9nLCAn4oieJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mYW5nOy9nLCAn4oigJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mYW5kOy9nLCAn4oinJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mb3I7L2csICfiiKgnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZjYXA7L2csICfiiKknKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZjYXA7L2csICfiiKonKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZpbnQ7L2csICfiiKsnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZ0aGVyZTQ7L2csICfiiLQnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZzaW07L2csICfiiLwnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZjb25nOy9nLCAn4omFJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mYXN5bXA7L2csICfiiYgnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZuZTsvZywgJ+KJoCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmxlOy9nLCAn4omkJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mZ2U7L2csICfiiaUnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZzdWI7L2csICfiioInKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZzdXA7L2csICfiioMnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZuc3ViOy9nLCAn4oqEJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mc3ViZTsvZywgJ+KKhicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnN1cGU7L2csICfiiocnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZvcGx1czsvZywgJ+KKlScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJm90aW1lczsvZywgJ+KKlycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnBlcnA7L2csICfiiqUnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZzZG90Oy9nLCAn4ouFJyk7XG4gIHJldHVybiBzdHI7XG59XG5cbi8vSFRNTCDmlK/mjIHnmoTluIzohYrlrZfmr41cbmZ1bmN0aW9uIHN0ckdyZWVjZURpc2NvZGUoc3RyOiBzdHJpbmcpIHtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZBbHBoYTsvZywgJ86RJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mQmV0YTsvZywgJ86SJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mR2FtbWE7L2csICfOkycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJkRlbHRhOy9nLCAnzpQnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZFcHNpbG9uOy9nLCAnzpUnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZaZXRhOy9nLCAnzpYnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZFdGE7L2csICfOlycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJlRoZXRhOy9nLCAnzpgnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZJb3RhOy9nLCAnzpknKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZLYXBwYTsvZywgJ86aJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mTGFtYmRhOy9nLCAnzpsnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZNdTsvZywgJ86cJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mTnU7L2csICfOnScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJlhpOy9nLCAnzp0nKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZPbWljcm9uOy9nLCAnzp8nKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZQaTsvZywgJ86gJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mUmhvOy9nLCAnzqEnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZTaWdtYTsvZywgJ86jJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mVGF1Oy9nLCAnzqQnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZVcHNpbG9uOy9nLCAnzqUnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZQaGk7L2csICfOpicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJkNoaTsvZywgJ86nJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mUHNpOy9nLCAnzqgnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZPbWVnYTsvZywgJ86pJyk7XG5cbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZhbHBoYTsvZywgJ86xJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mYmV0YTsvZywgJ86yJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mZ2FtbWE7L2csICfOsycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmRlbHRhOy9nLCAnzrQnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZlcHNpbG9uOy9nLCAnzrUnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZ6ZXRhOy9nLCAnzrYnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZldGE7L2csICfOtycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnRoZXRhOy9nLCAnzrgnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZpb3RhOy9nLCAnzrknKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZrYXBwYTsvZywgJ866Jyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbGFtYmRhOy9nLCAnzrsnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZtdTsvZywgJ868Jyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbnU7L2csICfOvScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnhpOy9nLCAnzr4nKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZvbWljcm9uOy9nLCAnzr8nKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZwaTsvZywgJ8+AJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mcmhvOy9nLCAnz4EnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZzaWdtYWY7L2csICfPgicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnNpZ21hOy9nLCAnz4MnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZ0YXU7L2csICfPhCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnVwc2lsb247L2csICfPhScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnBoaTsvZywgJ8+GJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mY2hpOy9nLCAnz4cnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZwc2k7L2csICfPiCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJm9tZWdhOy9nLCAnz4knKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZ0aGV0YXN5bTsvZywgJ8+RJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mdXBzaWg7L2csICfPkicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnBpdjsvZywgJ8+WJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbWlkZG90Oy9nLCAnwrcnKTtcbiAgcmV0dXJuIHN0cjtcbn1cblxuLy8gXG5cbmZ1bmN0aW9uIHN0cmNoYXJhY3RlckRpc2NvZGUoc3RyOiBzdHJpbmcpIHtcbiAgLy8g5Yqg5YWl5bi455So6Kej5p6QXG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbmJzcDsvZywgJyAnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZxdW90Oy9nLCBcIidcIik7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mYW1wOy9nLCAnJicpO1xuICAvLyBzdHIgPSBzdHIucmVwbGFjZSgvJmx0Oy9nLCAn4oC5Jyk7XG4gIC8vIHN0ciA9IHN0ci5yZXBsYWNlKC8mZ3Q7L2csICfigLonKTtcblxuICBzdHIgPSBzdHIucmVwbGFjZSgvJmx0Oy9nLCAnPCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmd0Oy9nLCAnPicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJiM4MjI2Oy9nLCAn4oCiJyk7XG5cbiAgcmV0dXJuIHN0cjtcbn1cblxuLy8gSFRNTCDmlK/mjIHnmoTlhbbku5blrp7kvZNcbmZ1bmN0aW9uIHN0ck90aGVyRGlzY29kZShzdHI6IHN0cmluZykge1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJk9FbGlnOy9nLCAnxZInKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZvZWxpZzsvZywgJ8WTJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mU2Nhcm9uOy9nLCAnxaAnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZzY2Fyb247L2csICfFoScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJll1bWw7L2csICfFuCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmZub2Y7L2csICfGkicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmNpcmM7L2csICfLhicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnRpbGRlOy9nLCAny5wnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZlbnNwOy9nLCAnJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mZW1zcDsvZywgJycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnRoaW5zcDsvZywgJycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnp3bmo7L2csICcnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZ6d2o7L2csICcnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZscm07L2csICcnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZybG07L2csICcnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZuZGFzaDsvZywgJ+KAkycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJm1kYXNoOy9nLCAn4oCUJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbHNxdW87L2csICfigJgnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZyc3F1bzsvZywgJ+KAmScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnNicXVvOy9nLCAn4oCaJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbGRxdW87L2csICfigJwnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZyZHF1bzsvZywgJ+KAnScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmJkcXVvOy9nLCAn4oCeJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mZGFnZ2VyOy9nLCAn4oCgJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mRGFnZ2VyOy9nLCAn4oChJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mYnVsbDsvZywgJ+KAoicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmhlbGxpcDsvZywgJ+KApicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnBlcm1pbDsvZywgJ+KAsCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnByaW1lOy9nLCAn4oCyJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mUHJpbWU7L2csICfigLMnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZsc2FxdW87L2csICfigLknKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZyc2FxdW87L2csICfigLonKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZvbGluZTsvZywgJ+KAvicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmV1cm87L2csICfigqwnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZ0cmFkZTsvZywgJ+KEoicpO1xuXG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mbGFycjsvZywgJ+KGkCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnVhcnI7L2csICfihpEnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZyYXJyOy9nLCAn4oaSJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mZGFycjsvZywgJ+KGkycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmhhcnI7L2csICfihpQnKTtcbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZjcmFycjsvZywgJ+KGtScpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmxjZWlsOy9nLCAn4oyIJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8mcmNlaWw7L2csICfijIknKTtcblxuICBzdHIgPSBzdHIucmVwbGFjZSgvJmxmbG9vcjsvZywgJ+KMiicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnJmbG9vcjsvZywgJ+KMiycpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmxvejsvZywgJ+KXiicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJnNwYWRlczsvZywgJ+KZoCcpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJmNsdWJzOy9nLCAn4pmjJyk7XG4gIHN0ciA9IHN0ci5yZXBsYWNlKC8maGVhcnRzOy9nLCAn4pmlJyk7XG5cbiAgc3RyID0gc3RyLnJlcGxhY2UoLyZkaWFtczsvZywgJ+KZpicpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvJiMzOTsvZywgJ1xcJycpO1xuICByZXR1cm4gc3RyO1xufVxuXG5mdW5jdGlvbiBzdHJNb3JlRGlzY29kZShzdHI6IHN0cmluZykge1xuICBzdHIgPSBzdHIucmVwbGFjZSgvXFxyXFxuL2csIFwiXCIpO1xuICBzdHIgPSBzdHIucmVwbGFjZSgvXFxuL2csIFwiXCIpO1xuXG4gIC8vIHN0ciA9IHN0ci5yZXBsYWNlKC9jb2RlL2csXCJ3eHh4Y29kZS1zdHlsZVwiKTtcbiAgcmV0dXJuIHN0cjtcbn1cblxuZnVuY3Rpb24gc3RyRGlzY29kZShzdHI6IHN0cmluZykge1xuICBzdHIgPSBzdHJOdW1EaXNjb2RlKHN0cik7XG4gIHN0ciA9IHN0ckdyZWVjZURpc2NvZGUoc3RyKTtcbiAgc3RyID0gc3RyY2hhcmFjdGVyRGlzY29kZShzdHIpO1xuICBzdHIgPSBzdHJPdGhlckRpc2NvZGUoc3RyKTtcbiAgc3RyID0gc3RyTW9yZURpc2NvZGUoc3RyKTtcbiAgcmV0dXJuIHN0cjtcbn1cbmZ1bmN0aW9uIHVybFRvSHR0cFVybCh1cmw6IHN0cmluZywgcmVwOiBzdHJpbmcgfCBudW1iZXIpIHtcblxuICB2YXIgcGF0dDEgPSBuZXcgUmVnRXhwKFwiXi8vXCIpO1xuICB2YXIgcmVzdWx0ID0gcGF0dDEudGVzdCh1cmwpO1xuICBpZiAocmVzdWx0KSB7XG4gICAgdXJsID0gcmVwICsgXCI6XCIgKyB1cmw7XG4gIH1cbiAgcmV0dXJuIHVybDtcbn1cblxuZXhwb3J0IGRlZmF1bHQge1xuICBzdHJEaXNjb2RlOiBzdHJEaXNjb2RlLFxuICB1cmxUb0h0dHBVcmw6IHVybFRvSHR0cFVybFxufSJdfQ==
