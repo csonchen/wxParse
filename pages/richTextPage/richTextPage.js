@@ -9,7 +9,7 @@ const md =  '# 我是一级标题\n' +
  
 const html = `
   <div style="margin-bottom: 10px;">
-    字体标签
+    * 字体标签
   </div>
   <h1>h1</h1>
   <h2>h2</h2>
@@ -17,7 +17,12 @@ const html = `
   <h4>h4</h4>
 
   <div style="margin-bottom: 10px;">
-  audio标签
+    * video标签
+  </div>
+  <video src="https://ugccsy.qq.com/uwMROfz2r57EIaQXGdGnC2dePkZaz9nvINvy8qtBz-4opyj0/szg_4117_50001_0b6boeaboaaagaaod27ggzpfc4odc5yqaf2a.f622.mp4?sdtfrom=v1010&guid=a4757c60e5f02cd98e0146e0a81b5fd7&vkey=388C92E9252109A79FB55DB9FCEF07EC74FFC2E3C4E4DF098CA5A543EA40FB00E72C25D78D7738A11D32B338A122043D626FF914C279C81173CCF39EFBED328302BFB6B5AE0DEFAB28833AA5BD003047AB041E6CE05F045DCF9FD6E7693D4D039296CC22518B2A372F99552B19957D9F0B57C19EF99901039218D25A2D591843"></video>
+
+  <div style="margin-bottom: 10px;">
+    * audio标签
   </div>
   <audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1"></audio>
 
