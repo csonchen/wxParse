@@ -89,6 +89,24 @@
       </view>
     </block>
 
+    <!-- table类型 -->
+    <block wx:elif="{{item.tag == 'table'}}">
+      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+        <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
+          <wxParse nodes="{{child}}"></wxParse>
+        </block>
+      </view>
+    </block>
+
+    <!-- tr 类型 -->
+    <block wx:elif="{{item.tag == 'tr'}}">
+      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+        <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
+          <wxParse class="{{child.classStr}} wxParse-{{child.tag}} wxParse-{{child.tag}}-container" style="{{child.styleStr}}" nodes="{{child}}"></wxParse>
+        </block>
+      </view>
+    </block>
+
     <!-- audio类型 -->
     <block wx:elif="{{item.tag == 'audio'}}">
       <view class="wxParse-audio">

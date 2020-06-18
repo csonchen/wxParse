@@ -22,7 +22,7 @@ const bindData = (() => {
       instance = {
         [bindName]: data
       } 
-    }else if(data){
+    } else if (data) {
       instance[bindName] = data;
     }
     return instance[bindName]
