@@ -1,6 +1,6 @@
 import HtmlToJson from './utils/html2json';
 import showdown from './utils/showdown.js';
-import { getSystemInfo, bindData } from './utils/util';
+import { getSystemInfo, bindInstance } from './utils/util';
 
 Component({
   properties: {
@@ -33,6 +33,11 @@ Component({
     bindData: {},
   },
 
+  detached() {
+    // 组件销毁，清除绑定实例
+    bindInstance.clear()
+  },
+
   methods: {
     _parseHtml(html, bindName) {
       bindName = 'wxParseData'
@@ -48,7 +53,7 @@ Component({
           [bindName]: transData
         }
       })
-      bindData(bindName, transData)
+      bindInstance.set(bindName, transData)
       console.log(this.data)
     },
 
@@ -90,7 +95,7 @@ Component({
     wxParseImgTap(e) {
       const { src } = e.target.dataset
       const bindName = 'wxParseData'
-      const { imageUrls } = bindData(bindName)
+      const { imageUrls } = bindInstance.set(bindName)
       wx.previewImage({ 
         current: src,
         urls: imageUrls
