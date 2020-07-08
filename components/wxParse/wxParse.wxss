@@ -205,6 +205,7 @@ view{
   overflow: hidden;
   max-width: 100%;
   width: 100%;
+  display: block;
 }
 .wxParse-img-fadein {
   animation: fade-in 1s linear;

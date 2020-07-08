@@ -73,7 +73,8 @@
         <image 
           style="display: none;" 
           mode="widthFix" 
-          data-from="{{item.from}}" 
+          data-from="{{item.from}}"
+          data-index="{{index}}" 
           src="{{ item.attr.src }}"
           bindload="wxParseImgLoad" 
         />
