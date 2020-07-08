@@ -74,7 +74,7 @@ Component({
      */
     wxParseImgLoad(e) {
       // 获取当前的image node节点
-      const { from: tagFrom } = e.target.dataset || {}
+      const { from: tagFrom, index } = e.target.dataset || {}
       if (typeof tagFrom !== 'undefined' && tagFrom.length > 0) {
         const { width, height } = e.detail
         
@@ -83,7 +83,7 @@ Component({
         this.setData({
           width: recal.imageWidth,
           height: recal.imageHeight,
-          [`nodesData[${0}].loaded`]: true,
+          [`nodesData[${index}].loaded`]: true,
         })
       }
     },
