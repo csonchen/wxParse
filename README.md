@@ -133,7 +133,7 @@ npm install --save wx-minicomponent
 nodes|富文本字符|String|"\<div\>test\</div\>"
 language|语言|String| 可选："html" \| "markdown" ("md")
 
-补充：
+**补充：**
 
 1. a标签的内外链跳转根据的是 `http` 字符判断；
 
@@ -141,12 +141,26 @@ language|语言|String| 可选："html" \| "markdown" ("md")
 
 - 如果page页面有定义 `handleTagATap` 方法，优先执行该方法
 
-- 如果page页面没有定义 `handleTagATap` 方法，根据链接 `href` 字段判断采用内外链跳转方式，外链跳转需要在 `app.json` 文件中新增 `自定义webview` 页面配置，如下所示：
+- 如果page页面没有定义 `handleTagATap` 方法，将根据 `a标签` 的 `href` 字段判断采用内外链跳转方式，外链跳转需要在 `app.json` 文件中新增 `自定义webview` 页面配置，如下所示：
+
+原生webview页面配置：
 
 ```json
+// app.json
 {
   "pages" [
     "components/wxParse/webviewPage/webviewPage"
+  ]
+}
+```
+
+npm 包webview配置：
+
+```json
+// app.json
+{
+  "pages" [
+    "miniprogram_npm/wx-minicomponent/wxParse/webviewPage/webviewPage"
   ]
 }
 ```
@@ -156,7 +170,7 @@ language|语言|String| 可选："html" \| "markdown" ("md")
 节点|例子
 :--|:--
 audio|\<audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1" /\>
-a|\<a href="https://www.baidu.com"\> 跳转到百度 \</a>  </br> \<a href="/pages/highLightPage/highLightPage"> 站内跳转 \</a>
+a|\<a href="https://www.baidu.com"> 跳转到百度 \</a>  </br> \<a href="/pages/highLightPage/highLightPage"> 站内跳转 \</a>
 p|
 div|
 span|
