@@ -141,7 +141,15 @@ language|语言|String| 可选："html" \| "markdown" ("md")
 
 - 如果page页面有定义 `handleTagATap` 方法，优先执行该方法
 
-- 如果page页面没有定义 `handleTagATap` 方法，根据链接 `href` 字段判断采用内外链跳转方式
+- 如果page页面没有定义 `handleTagATap` 方法，根据链接 `href` 字段判断采用内外链跳转方式，外链跳转需要在 `app.json` 文件中新增 `自定义webview` 页面配置，如下所示：
+
+```json
+{
+  "pages" [
+    "components/wxParse/webviewPage/webviewPage"
+  ]
+}
+```
 
 **受信任的节点**
 
