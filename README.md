@@ -133,12 +133,30 @@ npm install --save wx-minicomponent
 nodes|富文本字符|String|"\<div\>test\</div\>"
 language|语言|String| 可选："html" \| "markdown" ("md")
 
+补充：
+
+1. a标签的内外链跳转根据的是 `http` 字符判断；
+
+2. a标签的跳转顺序为：
+
+- 如果page页面有定义 `handleTagATap` 方法，优先执行该方法
+
+- 如果page页面没有定义 `handleTagATap` 方法，根据链接 `href` 字段判断采用内外链跳转方式，外链跳转需要在 `app.json` 文件中新增 `自定义webview` 页面配置，如下所示：
+
+```json
+{
+  "pages" [
+    "components/wxParse/webviewPage/webviewPage"
+  ]
+}
+```
+
 **受信任的节点**
 
 节点|例子
 :--|:--
 audio|\<audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1" /\>
-a|\<a href="www.baidu.com"\>跳转到百度\</a\>
+a|\<a href="https://www.baidu.com"\>跳转到百度\</a\>  </br> \<a href="/pages/highLightPage/highLightPage">站内跳转\</a>
 p|
 div|
 span|
@@ -192,6 +210,8 @@ src|音频地址|String|
 ![示例](/static/wxHigh.gif)
 
 ### 更新历史
+
+- 2020-8-5: 新增支持a标签的内外链跳转功能，并支持page页面点击方法回调控制
 
 - 2020-6-18：修复table渲染错位和image图片在个别情况无法预览的问题
 
