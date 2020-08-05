@@ -127,16 +127,31 @@ Component({
 
     /**
      * 增加a标签跳转
+     * 1. 如果page页面有handleTagATap事件，优先采用事件回调的方式处理
+     * 2. 如果page页面没有handleTagATap事件，根据链接字段判断采用内外链跳转方式
      * @param {*} e 
      */
     wxParseTagATap(e) {
-      const { src } = e.currentTarget.dataset
+      const { src = '' } = e.currentTarget.dataset
 
       // 采用递归组件方式渲染，不能通过triggerEvent方式向父级传参，可以获取当前页面调用页面方法处理
       const curPages =  getCurrentPages();
       const currentPage = curPages[curPages.length - 1]
-      if (currentPage) {
-        currentPage.handleTagATap && currentPage.handleTagATap(src)
+      if (currentPage && currentPage.handleTagATap) {
+        currentPage.handleTagATap(src)
+        return
+      }
+
+      // 判断是否内部链接跳转
+      const isInnerPage = src.indexOf('http') === -1
+      if (isInnerPage) {
+        wx.navigateTo({
+          url: src
+        })
+      } else {
+        wx.navigateTo({
+          url: `/components/wxParse/webviewPage/webviewPage?src=${src}`
+        })
       }
     }
   }

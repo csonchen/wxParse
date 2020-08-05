@@ -2,7 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/richTextPage/richTextPage",
-    "pages/highLightPage/highLightPage"
+    "pages/highLightPage/highLightPage",
+    "components/wxParse/webviewPage/webviewPage"
   ],
   "window": {
     "backgroundTextStyle": "light",
