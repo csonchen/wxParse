@@ -156,7 +156,7 @@ language|语言|String| 可选："html" \| "markdown" ("md")
 节点|例子
 :--|:--
 audio|\<audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1" /\>
-a|\<a href="https://www.baidu.com"\>跳转到百度\</a>  </br> \<a href="/pages/highLightPage/highLightPage">站内跳转\</a>
+a|\<a href="https://www.baidu.com"\> 跳转到百度 \</a>  </br> \<a href="/pages/highLightPage/highLightPage"> 站内跳转 \</a>
 p|
 div|
 span|
