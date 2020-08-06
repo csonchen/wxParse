@@ -1,8 +1,6 @@
-# wxParse
+# wxParse —— 微信小程序富文本解析
 
-## 微信小程序富文本解析
-
-### 原因
+## 原因
 
 由于原作者仓库 [wxParse](https://github.com/icindy/wxParse) 不再维护，我们项目中商品信息展示又是以wxParse这个用做富文本解析的；
 
@@ -18,9 +16,9 @@
 
 4. 节点渲染没有绑定 `key` 值，一是在开发工具看到一堆的 `warning`信息（看着十分难受），二是节点频繁删除添加，无法比较`key值`，造成 `dom` 节点频繁操作。
 
-### 功能标签
+## 功能标签
 
-1. 目前该项目已经可以支持以下标签的渲染：
+目前该项目已经可以支持以下标签的渲染：
 
   - [x] audio标签（可自行更换组件样式，暂时采用微信公众号文章的`audio`音乐播放器的样式处理）
   - [x] video标签
@@ -38,15 +36,9 @@
   - [x] 其余块级标签
   - [x] 其余行级标签
 
-2. 支持 **npm包** 引入
+## 使用
 
-```shell
-npm install --save wx-minicomponent
-```
-
-### 使用
-
-1. **原生组件使用方法**
+### 1. 原生组件使用方法
 
 - 克隆 [项目](https://github.com/csonchen/wxParse) 代码，把 **components目录** 拷贝到你的小程序根目录下面;
 
@@ -66,7 +58,8 @@ npm install --save wx-minicomponent
 <wxParse nodes="{{ htmlText }}" />
 ```
 
-2. **npm组件使用方法**
+
+### 2. npm组件使用方法
 
 - 安装组件
 
@@ -94,7 +87,8 @@ npm install --save wx-minicomponent
 
 **提示：详细步骤可以参考小程序的[npm使用文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)**
 
-3. **补充组件：代码高亮展示组件使用**
+
+### 补充组件：代码高亮展示组件使用
 
 - 在 `page`的 `json` 文件里面引入 `highLight` 组件
 
@@ -124,7 +118,7 @@ npm install --save wx-minicomponent
 <highLight codeText="{{codeText}}" />
 ```
 
-### 参数文档
+## 参数文档
 
 - **wxParse：富文本解析组件**
 
@@ -207,7 +201,7 @@ title|标题|String|"test"
 desc|副标题|String|"sub test"
 src|音频地址|String|
 
-### 示例展示
+## 示例展示
 
 1. **富文本解析**
 
@@ -223,7 +217,9 @@ src|音频地址|String|
 
 ![示例](/static/wxHigh.gif)
 
-### 更新历史
+## 更新历史
+
+- 2020-8-6：table，tr，td等相关元素标签去掉style样式内嵌，避免表格样式错乱问题
 
 - 2020-8-5: 新增支持a标签的内外链跳转功能，并支持page页面点击方法回调控制
 
@@ -243,7 +239,7 @@ src|音频地址|String|
 
 - 2020-5-6：增加图片预览功能
 
-### TODO
+## TODO
 
 - [x] 图片占位图优化，优化 `image`标签加载，避免出现一闪而过，优化加载体验；
 - [ ] 编写插件，小程序可以通过插件方式引入；
