@@ -156,12 +156,13 @@
   <block wx:elif="{{item.node == 'text'}}">
     <view class="WxEmojiView wxParse-inline" style="{{item.styleStr}}">
       <block wx:for="{{item.textArray}}" wx:key="index" wx:for-index="index" wx:for-item="textItem">
-        <block class="{{textItem.text == '\\n' ? 'wxParse-hide':''}}" wx:if="{{textItem.node == 'text'}}">{{textItem.text}}</block>
+        <block class="{{textItem.text == '\\n' ? 'wxParse-hide':''}}" wx:if="{{textItem.node == 'text'}}">
+          <text selectable="{{true}}">{{textItem.text}}</text>
+        </block>
         <block wx:elif="{{textItem.node == 'element'}}">
           <image class="wxEmoji" src="{{textItem.baseSrc}}{{textItem.text}}" />
         </block>
       </block>
     </view>
   </block>
-
 </block>
