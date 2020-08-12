@@ -120,6 +120,8 @@ npm install --save wx-minicomponent
 
 ## 参数文档
 
+[线上文档地址](https://csonchen.github.io/wxParse/)
+
 - **wxParse：富文本解析组件**
 
 参数|说明|类型|例子
@@ -207,15 +209,15 @@ src|音频地址|String|
 
 - **html文本解析实例**
 
-![示例](/static/wxParse.gif)
+![示例](https://github.com/csonchen/wxParse/raw/master/static/wxParse.gif)
 
 - **markdown文本解析实例**
 
-![示例](/static/md.png)
+![示例](https://github.com/csonchen/wxParse/raw/master/static/md.png)
 
 2. **代码高亮**
 
-![示例](/static/wxHigh.gif)
+![示例](https://github.com/csonchen/wxParse/raw/master/static/wxHigh.gif)
 
 ## 更新历史
 
