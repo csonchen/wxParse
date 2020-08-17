@@ -120,8 +120,6 @@ npm install --save wx-minicomponent
 
 ## 参数文档
 
-[线上文档地址](https://csonchen.github.io/wxParse/)
-
 - **wxParse：富文本解析组件**
 
 参数|说明|类型|例子
@@ -220,6 +218,8 @@ src|音频地址|String|
 ![示例](https://github.com/csonchen/wxParse/raw/master/static/wxHigh.gif)
 
 ## 更新历史
+
+- 2020-8-17：增加设置image标签的width，height属性以及内联样式属性设置
 
 - 2020-8-10: 文本节点添加选中复制功能
 
