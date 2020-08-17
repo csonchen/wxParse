@@ -67,7 +67,7 @@
           src="{{ item.loaded ? item.attr.src : '' }}" 
           bindtap="wxParseImgTap"
           mode="widthFix" 
-          style="width:{{width}}px;height:{{height}}px;"
+          style="width:{{item.attr.width || width}}px;height:{{item.attr.height || height}}px; {{item.styleStr}}"
         />
         <image hidden="{{item.loaded}}" class="img-loading" src="./images/loading.png" />
         <image 
