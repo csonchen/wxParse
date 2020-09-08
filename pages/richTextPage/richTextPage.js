@@ -8,6 +8,15 @@ const md =  '# 我是一级标题\n' +
             ' - works in the server and in the browser';
  
 const html = `
+  <head>
+    <meta chatset="utf-8" />
+    <title>test...</title>
+    <style>
+      .test {color: "red";}
+      div {font-size: "12px";}
+    </style>
+    <script>console.log('test');</script>
+  </head>
   <div style="margin: 10px 0 10px;">
     <b>* 字体标签</b>
   </div>
