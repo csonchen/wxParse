@@ -27,6 +27,10 @@ var fillAttrs = makeMap("checked,compact,declare,defer,disabled,ismap,multiple,n
 
 // Special Elements (can contain anything)
 var special = makeMap("wxxxcode-style,script,style,view,scroll-view,block");
+
+// 过滤掉小程序内部无法展示的标签
+var filterTags = makeMap("head,title,script,meta,style")
+
 function makeMap(str) {
     var obj = {}, items = str.split(",");
     for (var i = 0; i < items.length; i++)
@@ -174,7 +178,7 @@ function html2json(html, bindName) {
             if(node.tag === 'source'){
                 results.source = node.attr.src;
             }
-            
+
             if (unary) {
                 // if this tag doesn't have end tag
                 // like <img src="hoge.png"/>
@@ -199,15 +203,18 @@ function html2json(html, bindName) {
                 node.attr.src = results.source;
                 delete results.source;
             }
-            
-            if (bufArray.length === 0) {
-                results.nodes.push(node);
-            } else {
-                var parent = bufArray[0];
-                if (parent.nodes === undefined) {
-                    parent.nodes = [];
+
+            // 过滤掉小程序无法展示的标签
+            if (!filterTags[node.tag]) {
+                if (bufArray.length === 0) {
+                    results.nodes.push(node);
+                } else {
+                    var parent = bufArray[0];
+                    if (parent.nodes === undefined) {
+                        parent.nodes = [];
+                    }
+                    parent.nodes.push(node);
                 }
-                parent.nodes.push(node);
             }
         },
         chars: function (text) {
