@@ -58,12 +58,13 @@
 
     <!-- img类型 -->
     <block wx:elif="{{item.tag == 'img'}}">
-      <view class="wxParse-img-inner">
+      <view class="wxParse-img-inner" wx:if="{{item.attr.src}}">
         <image 
           class="{{item.classStr}} wxParse-{{item.tag}} {{item.loaded ? 'wxParse-img-fadein' : ''}}" 
           data-from="{{item.from}}" 
           data-src="{{item.attr.src}}" 
           data-idx="{{item.imgIndex}}" 
+          lazy-load="{{true}}"
           src="{{ item.loaded ? item.attr.src : '' }}" 
           bindtap="wxParseImgTap"
           mode="widthFix" 

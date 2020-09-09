@@ -215,7 +215,8 @@ view{
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  margin-top: -15px;
+  margin-left: -15px;
   animation: loading 1s linear 0s infinite;
   width: 30px;
   height: 30px;
