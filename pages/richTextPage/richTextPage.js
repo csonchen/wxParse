@@ -35,6 +35,11 @@ const html = `
   </div>
   <audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1"></audio>
 
+  <p style="margin: 10px 0 10px;">
+    <b>* p标签</b>
+  </p>
+  <p>你可以想象这里有一个DOM映射器，见名知义，这个’DOM 映射器‘的工作就是将 Virtual-DOM 对象树映射浏览器页面的 DOM，只不过为了提高 DOM 的'操作性能'. 它不是每一次都全量渲染整个 Virtual-DOM 树，而是支持接收两颗 Virtual-DOM 对象树(一个更新前，一个更新后), 通过 diff 算法计算出两颗 Virtual-DOM 树差异的地方，然后只应用这些差异的地方到实际的 DOM 树, 从而减少 DOM 变更的成本.</p>
+
   <div style="margin: 10px 0 10px;">
   <b>一. 转义字符</b>
   </div>&lt;div style=&quot;color:red&quot;&gt;我是转义字符&lt;/div&gt; 
