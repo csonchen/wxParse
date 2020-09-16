@@ -1,0 +1,24 @@
+{
+  "name": "rich-parse",
+  "version": "1.0.4",
+  "main": "index.js",
+  "description": "由于原作者仓库 [wxParse](https://github.com/icindy/wxParse) 不再维护，我们项目中商品信息展示又是以wxParse这个用做富文本解析的；",
+  "directories": {
+    "doc": "docs"
+  },
+  "miniprogram": "components",
+  "files": ["components"],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csonchen/wxParse.git"
+  },
+  "author": "cson_chensheng@163.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csonchen/wxParse/issues"
+  },
+  "homepage": "https://github.com/csonchen/wxParse#readme"
+}
