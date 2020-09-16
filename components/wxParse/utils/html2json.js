@@ -28,9 +28,6 @@ var fillAttrs = makeMap("checked,compact,declare,defer,disabled,ismap,multiple,n
 // Special Elements (can contain anything)
 var special = makeMap("wxxxcode-style,script,style,view,scroll-view,block");
 
-// 过滤掉小程序内部无法展示的标签
-var filterTags = makeMap("head,title,script,meta,style")
-
 function makeMap(str) {
     var obj = {}, items = str.split(",");
     for (var i = 0; i < items.length; i++)
@@ -50,17 +47,31 @@ function removeDOCTYPE(html) {
 }
 
 function trimHtml(html) {
-  return html
+    return html
         .replace(/\r?\n+/g, '')
         .replace(/<!--.*?-->/ig, '')
         .replace(/\/\*.*?\*\//ig, '')
         .replace(/[ ]+</ig, '<')
 }
 
+/**
+ * 过滤掉小程序无法展示的标签
+ * @param {*} html 
+ */
+function removeInvalidTags(html) {
+    return html
+        .replace(/\<head(.|\n)*<\/head\>/ig, '')
+        .replace(/\<title(.|\n)*<\/title\>/ig, '')
+        .replace(/\<script(.|\n)*<\/script\>/ig, '')
+        .replace(/\<meta(.|\n)*<\/meta\>/ig, '')
+        .replace(/\<style(.|\n)*<\/style\>/gm, '')
+} 
+
 
 function html2json(html, bindName) {
     //处理字符串
     html = removeDOCTYPE(html);
+    html = removeInvalidTags(html)
     html = trimHtml(html);
     html = wxDiscode.strDiscode(html);
     //生成node节点
@@ -204,17 +215,14 @@ function html2json(html, bindName) {
                 delete results.source;
             }
 
-            // 过滤掉小程序无法展示的标签
-            if (!filterTags[node.tag]) {
-                if (bufArray.length === 0) {
-                    results.nodes.push(node);
-                } else {
-                    var parent = bufArray[0];
-                    if (parent.nodes === undefined) {
-                        parent.nodes = [];
-                    }
-                    parent.nodes.push(node);
+            if (bufArray.length === 0) {
+                results.nodes.push(node);
+            } else {
+                var parent = bufArray[0];
+                if (parent.nodes === undefined) {
+                    parent.nodes = [];
                 }
+                parent.nodes.push(node);
             }
         },
         chars: function (text) {
