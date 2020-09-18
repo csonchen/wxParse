@@ -7,9 +7,11 @@
     "doc": "docs"
   },
   "miniprogram": "components",
-  "files": ["components"],
+  "files": [
+    "components"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,13 @@
   "bugs": {
     "url": "https://github.com/csonchen/wxParse/issues"
   },
-  "homepage": "https://github.com/csonchen/wxParse#readme"
+  "homepage": "https://github.com/csonchen/wxParse#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "event-stream": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-uglify-es": "^2.0.0"
+  }
 }
