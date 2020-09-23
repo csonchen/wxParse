@@ -1,0 +1,1 @@
+Page({data:{src:""},onLoad(a){const{src:o}=a||{};null!=o&&this.setData({src:decodeURIComponent(o)})}});

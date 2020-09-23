@@ -1,0 +1,18 @@
+<view class="wxAudio" bindtap="handleControl">
+  <view class="wxAudio-left">
+    <image hidden="{{ isPlay }}" src="./images/pause.png" class="wxAudio-icon" />
+    <image hidden="{{ !isPlay }}" src="./images/playing.gif" class="wxAudio-icon" />
+  </view>
+
+  <view class="wxAudio-right">
+    <view class="wxAudio-title">{{ title }}</view>
+    <view class="wxAudio-author">{{ desc }}</view>
+    <view class="wxAudio-progress">
+      <view class="wxAudio-current" style="width: {{progress}}%"></view>
+    </view>
+    <view class="wxAudio-time">
+      <text class="wxAudio-begin">{{ currentTimeStr }}</text>
+      <text class="wxAudio-total">{{ durationStr }}</text>
+    </view>
+  </view>
+</view>
