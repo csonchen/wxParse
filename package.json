@@ -18,7 +18,7 @@
     "url": "git+https://github.com/csonchen/wxParse.git"
   },
   "author": "cson_chensheng@163.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/csonchen/wxParse/issues"
   },
