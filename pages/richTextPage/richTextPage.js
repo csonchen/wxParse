@@ -8,6 +8,10 @@ const md =  '# 我是一级标题\n' +
             ' - works in the server and in the browser';
  
 const html = `
+<ul>\r\n<li>多个路由器,产品型号不一定要一个.只要刷了支持802.11r的都可以.<\/li>\r\n<li>多个路由器.<\/li>\r\n</ul><ol>\r\n<li>多个路由器,产品型号不一定要一个.只要刷了支持802.11r的都可以.<\/li>\r\n<li>如果已经配置好了,如果有个路由器不想用,可以关掉,不影响其他路由器漫游功能.<\/li>\r\n<li>如果还要添加,要所有路由器里面都加上去.<\/li>\r\n<\/ol><p>像std::string数组用sizeof并不太准确.百度找了一大圈,没有好办法.还是靠谷歌.<\/p>\r\n<p>&nbsp;<\/p>\r\n<blockquote>\r\n<p>std::string&nbsp; abc [] = {\"test\",\"test2\",\"test3\",\"test4\"};<\/p>\r\n<\/blockquote>\r\n<p>&nbsp;<\/p>\r\n<p>&nbsp;<\/p>\r\n<p>&nbsp;<\/p>\r\n<h2>用宏求<\/h2>\r\n<p>&nbsp;<\/p>\r\n<pre class=\"language-c\"><code>\/\/C++11\r\n\r\ntemplate &lt; typename T, std::size_t N &gt;\r\nconstexpr std::size_t size( T(&amp;)[N] ) { return N ; }\r\n\r\n\r\nstd::cout &lt;&lt; \"array 'abc' size: \" &lt;&lt; size(abc) &lt;&lt; ' ' ;<\/code><\/pre>\r\n<p>&nbsp;<\/p>\r\n<p>&nbsp;<\/p>\r\n<h2>用std::end求<\/h2>\r\n<p>&nbsp;<\/p>\r\n<pre class=\"language-c\"><code>\/\/C++11\r\n\r\n\r\nstd::cout &lt;&lt; std::end(abc) - std::begin(abc) &lt;&lt; ' ' ;<\/code><\/pre>\r\n<p>&nbsp;<\/p>\r\n<p>&nbsp;<\/p>\r\n<p>&nbsp;<\/p>\r\n<h2>通过维度计算<\/h2>\r\n<p>&nbsp;<\/p>\r\n<pre class=\"language-c\"><code>\/\/C++11\r\n\r\n\r\nstd::cout &lt;&lt; std::extent&lt; decltype(abc) &gt;::value &lt;&lt; ' ' ;\r\n<\/code><\/pre>\r\n<p>&nbsp;<\/p>\r\n<h2>向量类型计算<\/h2>\r\n<p>&nbsp;<\/p>\r\n<p>这个我也没搞懂.先贴出来.<\/p>\r\n<p>&nbsp;<\/p>\r\n<pre class=\"language-c\"><code>\/\/ C++11 \r\n\r\n\r\n#include &lt;vector&gt;\r\n#include &lt;string&gt;\r\n\r\nstd::vector vs {\"a\", \"be\", \"see\"}; \r\nstd::size_t length = vs.size();<\/code><\/pre>\r\n<p>&nbsp;<\/p>\r\n<h2>for枚举<\/h2>\r\n<p>&nbsp;<\/p>\r\n<p>当然,效率不高.<\/p>\r\n<p>这个可以在for内直接枚举.<\/p>\r\n<p>&nbsp;<\/p>\r\n<pre class=\"language-c\"><code>\/\/c++ 11\r\n\r\nint count = 0;\r\n\r\nfor (auto v : abc)\r\n{\r\n        \r\n        \/\/直接用 v 参与计算,这里 v等价于 abc[count];\r\n\r\n        \/\/先干其他的.再累加.\r\n        count++;\r\n         \r\n}<\/code><\/pre>\r\n<p>&nbsp;<\/p>\r\n<p>&nbsp;<\/p>\r\n<p>&nbsp;<\/p>\r\n<h2>参考<\/h2>\r\n<p>&nbsp;<\/p>\r\n<p><a href=\"http:\/\/www.cplusplus.com\/forum\/general\/110091\/\" target=\"_blank\" rel=\"noopener\">http:\/\/www.cplusplus.com\/forum\/general\/110091\/#<\/a><\/p>\r\n<p><a href=\"https:\/\/blog.csdn.net\/u010196624\/article\/details\/90085547\" target=\"_blank\" rel=\"noopener\">https:\/\/blog.csdn.net\/u010196624\/article\/details\/90085547<\/a><\/p>\r\n<p><a href=\"https:\/\/www.cnblogs.com\/developing\/articles\/10890903.html\" target=\"_blank\" rel=\"noopener\">https:\/\/www.cnblogs.com\/developing\/articles\/10890903.html<\/a><\/p>\r\n<p>&nbsp;<\/p>
+`
+
+const html2 = `
   <head>
     <meta chatset="utf-8" />
     <title>test...</title>
@@ -72,6 +76,10 @@ const html = `
   <div style="margin: 10px 0 10px;">
   <b>五. ol有序列表</b>
   </div>
+  <ol>
+  <li><font style="vertical-align: inherit;">张三</font></li>
+  <li><font style="vertical-align: inherit;">李四</font></li>
+  </ol>
   <ol>
   <li style="text-align: center;"><span style="background-color: rgb(139, 170, 74);">test</span></li>
   <li><span style="background-color: rgb(139, 170, 74);">test2</span></li>
