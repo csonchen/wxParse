@@ -19,6 +19,12 @@ const html = `
     <script>console.log('test');</script>
   </head>
   <div style="margin: 10px 0 10px;">
+    <b>* code标签</b>
+  </div>
+  <pre>
+  <code>\/\/C++11\r\n\r\ntemplate &lt; typename T, std::size_t N &gt;\r\nconstexpr std::size_t size( T(&amp;)[N] ) { return N ; }\r\n\r\n\r\nstd::cout &lt;&lt; \"array 'abc' size: \" &lt;&lt; size(abc) &lt;&lt; ' ' ;<\/code>
+  </pre>
+  <div style="margin: 10px 0 10px;">
     <b>* 字体标签</b>
   </div>
   <h1>h1</h1>
