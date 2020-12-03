@@ -1,5 +1,4 @@
 
-
 .wxParse{
   margin: 0 5px;
   font-family: Helvetica,sans-serif;
@@ -7,17 +6,17 @@
   color: #666;
   line-height: 1.8;
 }
-view{
-  /* word-break:break-all;  */
-}
 .wxParse-inline{
   display: inline;
   margin: 0;
   padding: 0;
   line-height: 1.75;
 }
+.mb10 {
+  margin-bottom: 0.63em;
+}
 /*//标题 */
-.wxParse-div{margin: 0;padding: 0;}
+.wxParse-div{ margin: 0;padding: 0; }
 .wxParse-h1{ font-size:2em; margin: .67em 0 }
 .wxParse-h2{ font-size:1.5em; margin: .75em 0 }
 .wxParse-h3{ font-size:1.17em; margin: .83em 0 }
@@ -87,22 +86,16 @@ view{
   width:100%;
 }
 .wxParse-blockquote {
-  margin: 0;
   padding:10px 0 10px 5px;
   font-family:Courier, Calibri,"宋体";
   background:#f5f5f5;
   border-left: 3px solid #dbdbdb;
 }
 .wxParse-code,.wxParse-wxxxcode-style{
-  /* display: inline; */
   background:#f5f5f5;
   line-height: 1.75;
 }
-.wxParse-ul{
-  margin: 20rpx 10rpx;
-}
 .wxParse-li,.wxParse-li-inner{
-  /* display: flex; */
   align-items: baseline;
   margin: 10rpx 0;
 }

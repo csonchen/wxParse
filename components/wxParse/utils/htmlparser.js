@@ -76,22 +76,22 @@ function HTMLParser(html, handler) {
 				index = html.indexOf("<");
 				var text = ''
 				while (index === 0) {
-                                  text += "<";
-                                  html = html.substring(1);
-                                  index = html.indexOf("<");
+					text += "<";
+					html = html.substring(1);
+					index = html.indexOf("<");
 				}
 				text += index < 0 ? html : html.substring(0, index);
 				html = index < 0 ? "" : html.substring(index);
 
-				if (handler.chars)
+				if (handler.chars && text.trim() !== '') {
 					handler.chars(text);
+				}
 			}
 
 		} else {
-
 			html = html.replace(new RegExp("([\\s\\S]*?)<\/" + stack.last() + "[^>]*>"), function (all, text) {
 				text = text.replace(/<!--([\s\S]*?)-->|<!\[CDATA\[([\s\S]*?)]]>/g, "$1$2");
-				if (handler.chars)
+				if (handler.chars && text.trim() !== '')
 					handler.chars(text);
 
 				return "";
