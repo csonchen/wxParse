@@ -7,6 +7,7 @@ const md =  '# 我是一级标题\n' +
             ' - it\'s extensible\n' +
             ' - works in the server and in the browser';
  
+
 const html = `
   <head>
     <meta chatset="utf-8" />
@@ -17,6 +18,12 @@ const html = `
     </style>
     <script>console.log('test');</script>
   </head>
+  <div style="margin: 10px 0 10px;">
+    <b>* code标签</b>
+  </div>
+  <pre>
+  <code>\/\/C++11\r\n\r\ntemplate &lt; typename T, std::size_t N &gt;\r\nconstexpr std::size_t size( T(&amp;)[N] ) { return N ; }\r\n\r\n\r\nstd::cout &lt;&lt; \"array 'abc' size: \" &lt;&lt; size(abc) &lt;&lt; ' ' ;<\/code>
+  </pre>
   <div style="margin: 10px 0 10px;">
     <b>* 字体标签</b>
   </div>
@@ -72,6 +79,10 @@ const html = `
   <div style="margin: 10px 0 10px;">
   <b>五. ol有序列表</b>
   </div>
+  <ol>
+  <li><font style="vertical-align: inherit;">张三</font></li>
+  <li><font style="vertical-align: inherit;">李四</font></li>
+  </ol>
   <ol>
   <li style="text-align: center;"><span style="background-color: rgb(139, 170, 74);">test</span></li>
   <li><span style="background-color: rgb(139, 170, 74);">test2</span></li>

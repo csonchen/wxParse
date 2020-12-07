@@ -13,10 +13,10 @@
 
     <!-- ol类型 -->
     <block wx:elif="{{item.tag == 'ol'}}">
-      <view class="{{item.classStr}} wxParse-ol" style="{{item.styleStr}}">
+      <view class="{{item.classStr}} wxParse-ol mb10" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
           <view class="wxParse-ol-inner">
-            <view class="mr5">{{index + 1}}. </view>
+            <view class="wxParse-ol-number">{{index + 1}}. </view>
             <view class="flex-full overflow-hide">
               <wxParse nodes="{{child}}"></wxParse>
             </view>
@@ -27,7 +27,7 @@
 
     <!-- ul类型 -->
     <block wx:elif="{{item.tag == 'ul'}}">
-      <view class="{{item.classStr}} wxParse-ul" style="{{item.style.Str}}">
+      <view class="{{item.classStr}} wxParse-ul mb10" style="{{item.style.Str}}">
         <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
           <view class="wxParse-ul-inner">
             <view class="wxParse-li-circle"></view>
@@ -138,7 +138,7 @@
 
     <!-- 其它块级标签 -->
     <block wx:elif="{{item.tagType == 'block'}}">
-      <view class="{{item.classStr}} wxParse-{{item.tag}}" style="{{item.styleStr}}">
+      <view class="{{item.classStr}} wxParse-{{item.tag}} mb10" style="{{item.styleStr}}">
         <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
           <wxParse nodes="{{child}}"></wxParse>
         </block>
