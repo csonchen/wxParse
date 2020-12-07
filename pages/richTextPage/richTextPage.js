@@ -24,13 +24,6 @@ const html = `
   <pre>
   <code>\/\/C++11\r\n\r\ntemplate &lt; typename T, std::size_t N &gt;\r\nconstexpr std::size_t size( T(&amp;)[N] ) { return N ; }\r\n\r\n\r\nstd::cout &lt;&lt; \"array 'abc' size: \" &lt;&lt; size(abc) &lt;&lt; ' ' ;<\/code>
   </pre>
-  <div style="margin: 10px 0 10px;">
-    <b>* 带尖括号code标签</b>
-  </div>  
-  <pre>
-  <code>\/\/ C++11 \r\n\r\n\r\n#include &lt;vector&gt;\r\n#include &lt;string&gt;\r\n\r\nstd::vector vs {\"a\", \"be\", \"see\"}; \r\nstd::size_t length = vs.size();<\/code>
-  </pre>
-  <p>链接测试,尖括号(异常) --&gt; &lt;<a href=\"https:\/\/www.yge.me\/show\/45.html\" target=\"_blank\" rel=\"noopener\">AS:RD 16人同时游戏补丁【客户端\/服务端】<\/a>&gt;<\/p><br><br>
   <div style="margin: 10px 0 10px;">
     <b>* 字体标签</b>
   </div>
