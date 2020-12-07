@@ -11,6 +11,11 @@
       </button>
     </block>
 
+    <!-- code类型 -->
+    <block wx:if="{{item.tag == 'code'}}">
+      <highLight codeText="{{_.parseCodeNodes(item.nodes)}}" />
+    </block>
+
     <!-- ol类型 -->
     <block wx:elif="{{item.tag == 'ol'}}">
       <view class="{{item.classStr}} wxParse-ol mb10" style="{{item.styleStr}}">
@@ -167,3 +172,4 @@
     </view>
   </block>
 </block>
+<wxs src="./wxs/parseCode.wxs" module="_" />

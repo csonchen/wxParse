@@ -1,0 +1,15 @@
+var parseCodeNodes = function(nodes) {
+  if (!nodes || nodes.length === 0) {
+    return '';
+  }
+  var res = '';
+  for (var i = 0; i < nodes.length; i++) {
+    var node = nodes[i];
+    res = res + node.text;
+  }
+  return res;
+}
+
+module.exports = {
+  parseCodeNodes: parseCodeNodes,
+}

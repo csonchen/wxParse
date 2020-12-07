@@ -17,3 +17,6 @@
 
 <view class="sub-title">6. ts代码解析</view>
 <highLight codeText="{{tsCode}}" language="typescript"></highLight>
+
+<view class="sub-title">7. c++代码解析</view>
+<highLight codeText="{{cppCode}}" language="c++"></highLight>
