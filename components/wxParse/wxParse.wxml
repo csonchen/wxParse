@@ -13,7 +13,9 @@
 
     <!-- code类型 -->
     <block wx:if="{{item.tag == 'code'}}">
-      <highLight codeText="{{_.parseCodeNodes(item.nodes)}}" />
+      <view class="{{item.classStr}}" style="{{item.styleStr}}">
+        <highLight codeText="{{_.parseCodeNodes(item.nodes)}}" language="{{item.attr.lang}}" />
+      </view>
     </block>
 
     <!-- ol类型 -->

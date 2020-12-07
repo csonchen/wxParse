@@ -19,10 +19,21 @@ const html = `
     <script>console.log('test');</script>
   </head>
   <div style="margin: 10px 0 10px;">
+    <b>* blockquote标签</b>
+  </div>
+  <blockquote>\r\n<p>std::string&nbsp; abc [] = {\"test\",\"test2\",\"test3\",\"test4\"};<\/p>\r\n<\/blockquote>
+  <div style="margin: 10px 0 10px;">
     <b>* code标签</b>
   </div>
   <pre>
-  <code>\/\/C++11\r\n\r\ntemplate &lt; typename T, std::size_t N &gt;\r\nconstexpr std::size_t size( T(&amp;)[N] ) { return N ; }\r\n\r\n\r\nstd::cout &lt;&lt; \"array 'abc' size: \" &lt;&lt; size(abc) &lt;&lt; ' ' ;<\/code>
+  <code lang="c++" style="margin-bottom: 10px;">\/\/C++11\r\n\r\ntemplate &lt; typename T, std::size_t N &gt;\r\nconstexpr std::size_t size( T(&amp;)[N] ) { return N ; }\r\n\r\n\r\nstd::cout &lt;&lt; \"array 'abc' size: \" &lt;&lt; size(abc) &lt;&lt; ' ' ;<\/code>
+  <code lang="javascript">
+const name = 'csonchen'
+const test = () => {
+  return name
+}
+test()
+  </code>
   </pre>
   <div style="margin: 10px 0 10px;">
     <b>* 字体标签</b>
