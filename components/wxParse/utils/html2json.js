@@ -85,13 +85,15 @@ function html2json(html, bindName) {
     };
     var index = 0;
     HTMLParser(html, {
-        start: function (tag, attrs, unary) {
+        start: function (tag, attrs, unary, content) {
             //debug(tag, attrs, unary);
             // node for this element
             var node = {
                 node: 'element',
                 tag: tag,
             };
+            // 判断是否需要添加标签主体内容
+            content && (node['content'] = content)
 
             if (bufArray.length === 0) {
                 node.index = index.toString()

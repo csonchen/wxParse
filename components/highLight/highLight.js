@@ -1,5 +1,17 @@
 const hljs = require('./lib/index');
 
+// 支持的解析语言列表
+const LANGUAGE_LIST = [
+  'javascript', 
+  'css', 
+  'xml', 
+  'sql', 
+  'typescript', 
+  'markdown', 
+  'c++', 
+  'c',
+];
+
 Component({
   properties: {
     codeText: {
@@ -24,7 +36,7 @@ Component({
 
   methods: {
     parseCode(input, language) {
-      const lang = language || 'javascript'
+      const lang = LANGUAGE_LIST.includes(language) ? language : 'javascript'
       const { value } = hljs.highlight(lang, input)
       const highlighted = value.replace('&amp;', '&').trim()
 
