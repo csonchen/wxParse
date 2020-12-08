@@ -21,6 +21,7 @@
 目前该项目已经可以支持以下标签的渲染：
 
   - [x] audio标签（可自行更换组件样式，暂时采用微信公众号文章的`audio`音乐播放器的样式处理）
+  - [x] code标签
   - [x] video标签
   - [x] table标签
   - [x] ul标签
@@ -85,39 +86,6 @@ npm install --save wx-minicomponent
 <wxParse nodes="{{ htmlText }}" />
 ```
 
-**提示：详细步骤可以参考小程序的[npm使用文档](https://developers.weixin.qq.com/miniprogram/dev/devtools/npm.html)**
-
-
-### 补充组件：代码高亮展示组件使用
-
-- 在 `page`的 `json` 文件里面引入 `highLight` 组件
-
-**原生引入：**
-
-```json
-{
-  "usingComponents": {
-    "highLight": "/components/highLight/highLight"
-  }
-}
-```
-
-**npm组件引入：**
-
-```json
-{
-  "usingComponents": {
-    "highLight": "/miniprogram_npm/wx-minicomponent/highLight"
-  }
-}
-```
-
-- 组件调用
-
-```xml
-<highLight codeText="{{codeText}}" />
-```
-
 ## 参数文档
 
 - **wxParse：富文本解析组件**
@@ -165,6 +133,7 @@ npm 包webview配置：
 :--|:--
 audio|\<audio title="我是标题" desc="我是小标题" src="https://media.lycheer.net/lecture/25840237/5026279_1509614610000.mp3?0.1" /\>
 a|\<a href="https://www.baidu.com"> 跳转到百度 \</a>  </br> \<a href="/pages/highLightPage/highLightPage"> 站内跳转 \</a>
+code| \<code lang="javascript"> const name = "csonchen"; <\/code>
 p|
 div|
 span|
@@ -188,7 +157,7 @@ td|
 参数|说明|类型|例子
 :--|:--|:--|:--
 codeText|原始高亮代码字符|String|"var num = 10;"
-language|代码语言类型|String|可选值："javascript/typescript/css/xml/sql/markdown"
+language|代码语言类型|String|可选值："javascript/typescript/css/xml/sql/markdown/c++/c"
 
 **提示：如果是html语言，language的值为xml**
 
@@ -207,17 +176,31 @@ src|音频地址|String|
 
 - **html文本解析实例**
 
-![示例](https://github.com/csonchen/wxParse/raw/master/static/wxParse.gif)
+<left>
+<figure>
+<img src="./static/code.png" style="height: 500px"/>
+<img src="./static/wxParse.gif" style="height: 500px"/>
+</figure>
+</left>
 
 - **markdown文本解析实例**
+<left>
+<figure>
+<img src="./static/md.png" style="height: 500px" />
+</figure>
+</left>
 
-![示例](https://github.com/csonchen/wxParse/raw/master/static/md.png)
+2. **代码高亮（highLight组件）**
 
-2. **代码高亮**
-
-![示例](https://github.com/csonchen/wxParse/raw/master/static/wxHigh.gif)
+<left>
+<figure>
+<img src="./static/wxHigh.gif" style="height: 500px" />
+</figure>
+</left>
 
 ## 更新历史
+
+- 2020-12-8: 新增 `code` 标签的代码高亮功能，并修复解析语言注册失败的bug
 
 - 2020-12-7：修复 `code` 标签解析错误以及换行符被替换成空字符的bug
 
