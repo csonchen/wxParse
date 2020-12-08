@@ -1,5 +1,9 @@
 # wxParse —— 微信小程序富文本解析
 
+![](https://img.shields.io/github/stars/csonchen/wxParse?style=flat-square)
+![](https://img.shields.io/github/forks/csonchen/wxParse?style=flat-square)
+![](https://img.shields.io/github/license/csonchen/wxParse?style=flat-square)
+
 ## 原因
 
 由于原作者仓库 [wxParse](https://github.com/icindy/wxParse) 不再维护，我们项目中商品信息展示又是以wxParse这个用做富文本解析的；
