@@ -88,24 +88,40 @@ npm install --save wx-minicomponent
 
 ## 参数文档
 
-- **wxParse：富文本解析组件**
+### wxParse：富文本解析组件
 
 参数|说明|类型|例子
 :--|:--|:--|:--
 nodes|富文本字符|String|"\<div\>test\</div\>"
 language|语言|String| 可选："html" \| "markdown" ("md")
 
-**补充：**
+**标签使用说明补充：**
 
-1. a标签的内外链跳转根据的是 `http` 字符判断；
+1. `a` 标签的内外链跳转根据的是 `http` 字符判断；
 
-2. a标签的跳转顺序为：
+2. `a` 标签的跳转顺序为：
 
 - 如果page页面有定义 `handleTagATap` 方法，优先执行该方法
 
 - 如果page页面没有定义 `handleTagATap` 方法，将根据 `a标签` 的 `href` 字段判断采用内外链跳转方式，外链跳转需要在 `app.json` 文件中新增 `自定义webview` 页面配置，如下所示：
 
-原生webview页面配置：
+3. `code` 标签代码高亮：
+
+- `code` 标签添加 `lang`属性，默认值是`javascript` ；支持 `javascript|typescript|css|xml|sql|markdown|c++|c` 可选值
+
+- 支持高亮解析结构如下：
+
+```html
+<pre>
+<code lang="javascript">
+  const name = 'csonchen'
+</code>
+</pre>
+```
+
+**webview页面配置：**
+
+1. 原生webview页面配置：
 
 ```json
 // app.json
@@ -116,7 +132,7 @@ language|语言|String| 可选："html" \| "markdown" ("md")
 }
 ```
 
-npm 包webview配置：
+2. npm 包webview配置：
 
 ```json
 // app.json
@@ -152,7 +168,7 @@ th|
 td|
 ....|
 
-- **highLight：代码高亮解析组件**
+### highLight：代码高亮解析组件
 
 参数|说明|类型|例子
 :--|:--|:--|:--
@@ -162,7 +178,7 @@ language|代码语言类型|String|可选值："javascript/typescript/css/xml/sq
 **提示：如果是html语言，language的值为xml**
 
 
-- **wxAudio：仿微信公众号文章音频播放组件**
+### wxAudio：仿微信公众号文章音频播放组件
 
 参数|说明|类型|例子
 :--|:--|:--|:--
