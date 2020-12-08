@@ -26,6 +26,23 @@ const html = `
     <b>* code标签</b>
   </div>
   <pre>
+  <code lang="xml">
+<div>
+  csonchen
+</div>  
+  </code>
+  </pre>
+  <pre class="language-c">
+  <code lang="c">
+// C++11 
+
+#include &lt;vector&gt;
+#include &lt;string&gt;
+std::vector vs {"a", "be", "see"}; 
+std::size_t length = vs.size();
+  </code>
+  </pre>
+  <pre>
   <code lang="c++" style="margin-bottom: 10px;">\/\/C++11\r\n\r\ntemplate &lt; typename T, std::size_t N &gt;\r\nconstexpr std::size_t size( T(&amp;)[N] ) { return N ; }\r\n\r\n\r\nstd::cout &lt;&lt; \"array 'abc' size: \" &lt;&lt; size(abc) &lt;&lt; ' ' ;<\/code>
   <code lang="javascript">
 const name = 'csonchen'

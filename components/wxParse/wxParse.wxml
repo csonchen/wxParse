@@ -12,9 +12,9 @@
     </block>
 
     <!-- code类型 -->
-    <block wx:if="{{item.tag == 'code'}}">
+    <block wx:elif="{{item.tag == 'code'}}">
       <view class="{{item.classStr}}" style="{{item.styleStr}}">
-        <highLight codeText="{{_.parseCodeNodes(item.nodes)}}" language="{{item.attr.lang}}" />
+        <highLight codeText="{{item.content || ''}}" language="{{item.attr.lang}}" />
       </view>
     </block>
 
@@ -174,4 +174,3 @@
     </view>
   </block>
 </block>
-<wxs src="./wxs/parseCode.wxs" module="_" />
