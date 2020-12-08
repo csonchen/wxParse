@@ -26,6 +26,13 @@ const html = `
     <b>* code标签</b>
   </div>
   <pre>
+  <code lang="bash">
+#!/bin/bash
+
+echo "Hello World!"
+  </code>
+  </pre>
+  <pre>
   <code lang="xml">
 <div>
   csonchen
@@ -38,6 +45,7 @@ const html = `
 
 #include &lt;vector&gt;
 #include &lt;string&gt;
+
 std::vector vs {"a", "be", "see"}; 
 std::size_t length = vs.size();
   </code>
@@ -76,11 +84,11 @@ test()
   <p>你可以想象这里有一个DOM映射器，见名知义，这个’DOM 映射器‘的工作就是将 Virtual-DOM 对象树映射浏览器页面的 DOM，只不过为了提高 DOM 的'操作性能'. 它不是每一次都全量渲染整个 Virtual-DOM 树，而是支持接收两颗 Virtual-DOM 对象树(一个更新前，一个更新后), 通过 diff 算法计算出两颗 Virtual-DOM 树差异的地方，然后只应用这些差异的地方到实际的 DOM 树, 从而减少 DOM 变更的成本.</p>
 
   <div style="margin: 10px 0 10px;">
-  <b>一. 转义字符</b>
+  <b>* 转义字符</b>
   </div>&lt;div style=&quot;color:red&quot;&gt;我是转义字符&lt;/div&gt; 
 
   <div style="margin: 10px 0 10px;">
-  <b>二. a标签跳转</b>
+  <b>* a标签跳转</b>
   </div> 
   <div>
     <a href="https://www.baidu.com" title="我是外链跳转" target="_blank">a标签跳转（外链跳转）</a>&nbsp; 
@@ -90,7 +98,7 @@ test()
   </div>
 
   <div style="margin: 10px 0 10px;">
-  <b>三. 内联标签</b>
+  <b>* 内联标签</b>
   </div> 
   <span style="background-color: rgb(139, 170, 74);">我是内联标签</span>
   <br />
@@ -98,14 +106,14 @@ test()
   <p></p>
 
   <div style="margin: 10px 0 10px;">
-  <b>四. ul无序列表</b>
+  <b>* ul无序列表</b>
   </div>
   <ul>
   <li style="text-align: center;"><span style="background-color: rgb(139, 170, 74);">1</span></li>
   </ul>
 
   <div style="margin: 10px 0 10px;">
-  <b>五. ol有序列表</b>
+  <b>* ol有序列表</b>
   </div>
   <ol>
   <li><font style="vertical-align: inherit;">张三</font></li>
@@ -117,7 +125,7 @@ test()
   </ol>
 
   <div style="margin: 10px 0 10px;">
-  <b>六. 表格渲染</b>
+  <b>* 表格渲染</b>
   </div>
   <table>
     <tr>
@@ -144,7 +152,7 @@ test()
   </table>
 
   <div style="margin: 10px 0 10px;">
-  <b>七. 图片渲染</b>
+  <b>* 图片渲染</b>
   </div>
   <p><img src="https://dev-sit-1251698455.cos.ap-guangzhou.myqcloud.com/ds/22/363/20200401/3c9e7798e3204756b9e0f3263882b81f.jpeg" /><img src="https://mmbiz.qpic.cn/mmbiz_png/1gmcynicwloGkVMTr6wTHdDXlFUSaSxOSRELianAFGJYVzvXJKoM2xbbFMqKe6ONy5zoHHejNbibTJn5gdEOc1aIA/0?wx_fmt=png" width="200" height="100" style="text-align: center;margin: 0 auto;"/></p>
 `
