@@ -1,8 +1,12 @@
 import HtmlToJson from './utils/html2json';
 import showdown from './utils/showdown.js';
-import { getSystemInfo, bindInstance } from './utils/util';
+import { getSystemInfo, cacheInstance } from './utils/util';
+
+const BIND_NAME = 'wxParse'
 
 Component({
+  pageNodeKey: '',
+
   properties: {
     nodes: {
       type: null,
@@ -33,31 +37,20 @@ Component({
     bindData: {},
   },
 
-  detached() {
-    // 组件销毁，清除绑定实例
-    bindInstance.clear()
+  lifetimes: {
+    detached() {
+      // 组件销毁，清除绑定实例
+      cacheInstance.remove(this.pageNodeKey)
+    }
   },
 
   methods: {
-    _parseHtml(html, bindName) {
-      bindName = 'wxParseData'
-
-      //存放html节点转化后的json数据
-      const transData = HtmlToJson.html2json(html, bindName)
-
-      transData.view = {}
-      transData.view.imagePadding = 0
-      this.setData({
-        nodesData: transData.nodes,
-        bindData: {
-          [bindName]: transData
-        }
-      })
-      bindInstance.set(bindName, transData)
-      console.log(this.data)
-    },
-
     _parseNodes(nodes) {
+      // 设置页面唯一键值标识符
+      const allPages = getCurrentPages()
+      const currentPage = allPages[allPages.length - 1]
+      this.pageNodeKey = `${BIND_NAME}_${currentPage.__wxExparserNodeId__}`
+
       if (typeof nodes === 'string') { // 初始为html富文本字符串
         this._parseHtml(nodes)
       } else if (Array.isArray(nodes)) { // html 富文本解析成节点数组
@@ -66,6 +59,22 @@ Component({
         const nodesData = [ nodes ]
         this.setData({ nodesData })
       }
+    },
+
+    _parseHtml(html) {
+      //存放html节点转化后的json数据
+      const transData = HtmlToJson.html2json(html, this.pageNodeKey)
+
+      transData.view = {}
+      transData.view.imagePadding = 0
+      this.setData({
+        nodesData: transData.nodes,
+        bindData: {
+          [this.pageNodeKey]: transData
+        }
+      })
+      cacheInstance.set(this.pageNodeKey, transData)
+      console.log(this.data)
     },
 
     /**
@@ -94,8 +103,7 @@ Component({
      */
     wxParseImgTap(e) {
       const { src } = e.target.dataset
-      const bindName = 'wxParseData'
-      const { imageUrls } = bindInstance.set(bindName)
+      const { imageUrls = [] } = cacheInstance.get(this.pageNodeKey)
       wx.previewImage({ 
         current: src,
         urls: imageUrls
