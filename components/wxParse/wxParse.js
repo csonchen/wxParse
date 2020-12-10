@@ -8,28 +8,27 @@ Component({
   pageNodeKey: '',
 
   properties: {
-    nodes: {
-      type: null,
-      observer(val) {
-        const { language } = this.properties
-        if (val) {
-          if (language === 'html') {
-            this._parseNodes(val)
-          }
-
-          if (language === 'markdown' || language === 'md') {
-            const converter = new showdown.Converter();
-            const parseNodes = converter.makeHtml(val);
-            this._parseNodes(parseNodes)
-          }
-        }
-      }
-    },
-
     language: {
       type: String,
       value: 'html' // 可选：html | markdown (md)
-    }
+    },
+
+    nodes: {
+      type: null,
+      observer(val) {
+        if (!val) return
+
+        const { language } = this.properties
+        // 采用markdown解析
+        if (language === 'markdown' || language === 'md') {
+          const converter = new showdown.Converter();
+          const parseNodes = converter.makeHtml(val);
+          this._parseNodes(parseNodes)
+        } else { // 默认采用html解析
+          this._parseNodes(val)
+        }
+      }
+    },
   },
 
   data: {
