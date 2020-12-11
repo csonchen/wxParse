@@ -1,0 +1,1 @@
+import cLike from"./c-like.js";module.exports=function(e){const c=cLike(e);return c.disableAutodetect=!1,c.name="C++",c.aliases=["cc","c++","h++","hpp","hh","hxx","cxx"],c};
