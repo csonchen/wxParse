@@ -23,9 +23,13 @@ Component({
         if (language === 'markdown' || language === 'md') {
           const converter = new showdown.Converter();
           const parseNodes = converter.makeHtml(val);
-          this._parseNodes(parseNodes)
+          setTimeout(() => {
+            this._parseNodes(parseNodes)
+          }, 0);
         } else { // 默认采用html解析
-          this._parseNodes(val)
+          setTimeout(() => {
+            this._parseNodes(val)
+          }, 0)
         }
       }
     },
