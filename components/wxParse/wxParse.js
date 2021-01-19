@@ -1,18 +1,27 @@
 import HtmlToJson from './utils/html2json';
 import showdown from './utils/showdown.js';
-import { getSystemInfo, cacheInstance } from './utils/util';
+import { getSystemInfo, cacheInstance, getUniqueKey } from './utils/util';
 
 const BIND_NAME = 'wxParse'
 
 Component({
-  pageNodeKey: '',
-
   properties: {
+    // 当前页面的page标识符
+    pageKey: {
+      type: String,
+      value: ''
+    },
+    // 当前节点的根节点标识符
+    rootKey: {
+      type: String,
+      value: ''
+    },  
+    // 解析语言类型
     language: {
       type: String,
       value: 'html' // 可选：html | markdown (md)
     },
-
+    // 解析节点
     nodes: {
       type: null,
       observer(val) {
@@ -36,47 +45,59 @@ Component({
   },
 
   data: {
+    pageNodeKey: '',
+    wxparseRootKey: '',
     nodesData: [],
     bindData: {},
   },
 
   lifetimes: {
     detached() {
-      // 组件销毁，清除绑定实例
-      cacheInstance.remove(this.pageNodeKey)
+      // 组件销毁，清除当前页面绑定的所有wxparse实例
+      cacheInstance.removeAllByKey(this.data.pageKey)
     }
   },
 
   methods: {
     _parseNodes(nodes) {
-      // 设置页面唯一键值标识符
-      const allPages = getCurrentPages()
-      const currentPage = allPages[allPages.length - 1]
-      this.pageNodeKey = `${BIND_NAME}_${currentPage.__wxExparserNodeId__}`
-
       if (typeof nodes === 'string') { // 初始为html富文本字符串
         this._parseHtml(nodes)
-      } else if (Array.isArray(nodes)) { // html 富文本解析成节点数组
-        this.setData({ nodesData: nodes })
-      } else { // 其余为单个节点对象
-        const nodesData = [ nodes ]
-        this.setData({ nodesData })
+      } else { // 判断是否解析出来节点数组，其余则为节点对象，需自构建成数组格式
+        const nodesData = Object.prototype.toString.call(nodes) === '[object Array]' ? nodes : [nodes]
+        this.setData({
+          nodesData,
+        })
       }
     },
 
     _parseHtml(html) {
-      //存放html节点转化后的json数据
-      const transData = HtmlToJson.html2json(html, this.pageNodeKey)
+      // 生成page，wxparse根节点标识符
+      const allPages = getCurrentPages(),
+            currentPage = allPages[allPages.length - 1],
+            pageNodeKey = `${BIND_NAME}_${currentPage.__wxExparserNodeId__}`,
+            wxparseRootKey = `${pageNodeKey}_${getUniqueKey()}`
 
+      //存放html节点转化后的json数据
+      const transData = HtmlToJson.html2json(html, wxparseRootKey)
       transData.view = {}
       transData.view.imagePadding = 0
+
       this.setData({
+        wxparseRootKey,
+        pageNodeKey,
         nodesData: transData.nodes,
         bindData: {
-          [this.pageNodeKey]: transData
+          [wxparseRootKey]: transData,
         }
       })
-      cacheInstance.set(this.pageNodeKey, transData)
+      // 构建page页面对象内部的wxparse富文本节点数组集合 eg: pageId => [wxparse1key, wxparse2key, ....]
+      const pageInstance = cacheInstance.get(pageNodeKey)
+      if (pageInstance) {
+        pageInstance.push(wxparseRootKey)
+      } else {
+        cacheInstance.set(pageNodeKey, [wxparseRootKey])
+      }
+      cacheInstance.set(wxparseRootKey, transData)
       console.log(this.data)
     },
 
@@ -105,8 +126,8 @@ Component({
      * @param {*} e 
      */
     wxParseImgTap(e) {
-      const { src } = e.target.dataset
-      const { imageUrls = [] } = cacheInstance.get(this.pageNodeKey)
+      const { src = '' } = e.target.dataset || {}
+      const { imageUrls = [] } = cacheInstance.get(this.data.rootKey) || {}
       wx.previewImage({ 
         current: src,
         urls: imageUrls
