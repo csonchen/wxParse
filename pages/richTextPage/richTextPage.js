@@ -125,6 +125,11 @@ test()
   </ol>
 
   <div style="margin: 10px 0 10px;">
+  <b>* hr标签</b>
+  <hr />
+  </div>
+
+  <div style="margin: 10px 0 10px;">
   <b>* 表格渲染</b>
   </div>
   <table>

@@ -143,6 +143,11 @@
       <text>\n</text>
     </block>
 
+    <!-- hr类型 -->
+    <block wx:elif="{{item.tag == 'hr'}}">
+      <view class="wxParse-hr" />
+    </block>
+
     <!-- 其它块级标签 -->
     <block wx:elif="{{item.tagType == 'block'}}">
       <view class="{{item.classStr}} wxParse-{{item.tag}} mb10" style="{{item.styleStr}}">
