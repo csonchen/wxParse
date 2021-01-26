@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "wxParse": "../../components/wxParse/wxParse"
+    "wxParse": "../../dist/wxParse/wxParse"
   }
 }

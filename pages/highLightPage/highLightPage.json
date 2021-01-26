@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "highLight": "../../components/highLight/highLight"
+    "highLight": "../../dist/highLight/highLight"
   }
 }

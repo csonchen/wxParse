@@ -1,9 +1,10 @@
 const gulp = require('gulp');
 const path = require('path');
 const jsmin = require('gulp-uglify-es').default;
-const cssmin = require('gulp-clean-css')
+const cssmin = require('gulp-clean-css');
 const del = require('del');
 const event = require('event-stream');
+const htmlmin = require('gulp-htmlmin');
 
 const srcPath = path.resolve(__dirname + '/components');
 const distPath = path.resolve(__dirname + '/dist');
@@ -24,9 +25,20 @@ gulp.task('cssmin', () => {
     .pipe(gulp.dest(distPath))
 })
 
+gulp.task('htmlmin', () => {
+  return gulp.src(srcPath + '/**/*.wxml')
+    .pipe(htmlmin({
+      caseSensitive: true,
+      collapseWhitespace: true,
+      removeComments: true,
+      keepClosingSlash: true,
+    }))
+    .pipe(gulp.dest(distPath))
+})
+
 gulp.task('copy', (done) => {
   event.merge(
-    gulp.src(srcPath + '/**/*.wxml').pipe(gulp.dest(distPath)),
+    // gulp.src(srcPath + '/**/*.wxml').pipe(gulp.dest(distPath)),
     gulp.src(srcPath + '/**/*.json').pipe(gulp.dest(distPath)),
     gulp.src(srcPath + '/**/*.{png,gif,jpg}').pipe(gulp.dest(distPath))
   )
@@ -35,5 +47,5 @@ gulp.task('copy', (done) => {
 
 gulp.task('build', gulp.series(
   'clean',
-  gulp.parallel('jsmin', 'cssmin', 'copy'),
+  gulp.parallel('jsmin', 'cssmin', 'htmlmin', 'copy'),
 ))
