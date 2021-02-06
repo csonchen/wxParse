@@ -126,8 +126,8 @@ Component({
      * @param {*} e 
      */
     wxParseImgTap(e) {
-      const { src = '' } = e.target.dataset || {}
-      const cacheKey = this.data.rootKey || this.data.wxparseRootKey
+      const { src = '', from = ''} = e.target.dataset || {}
+      const cacheKey = this.data.rootKey || this.data.wxparseRootKey || from
       const { imageUrls = [] } = cacheInstance.get(cacheKey) || {}
       wx.previewImage({ 
         current: src,
