@@ -110,20 +110,6 @@ language|语言|String| 可选："html" \| "markdown" ("md")
 
 - 如果page页面没有定义 `handleTagATap` 方法，将根据 `a标签` 的 `href` 字段判断采用内外链跳转方式，外链跳转需要在 `app.json` 文件中新增 `自定义webview` 页面配置，如下所示：
 
-3. `code` 标签代码高亮：
-
-- `code` 标签添加 `lang`属性，默认值是`javascript` ；支持 `javascript|typescript|css|xml|sql|markdown|c++|c` 可选值
-
-- 支持高亮解析结构如下：
-
-```html
-<pre>
-<code lang="javascript">
-  const name = 'csonchen'
-</code>
-</pre>
-```
-
 **webview页面配置：**
 
 1. 原生webview页面配置：
@@ -146,6 +132,20 @@ language|语言|String| 可选："html" \| "markdown" ("md")
     "miniprogram_npm/wx-minicomponent/wxParse/webviewPage/webviewPage"
   ]
 }
+```
+
+3. `code` 标签代码高亮：
+
+- `code` 标签添加 `lang`属性，默认值是`javascript` ；支持 `javascript|typescript|css|xml|sql|markdown|c++|c` 可选值
+
+- 支持高亮解析结构如下：
+
+```html
+<pre>
+<code lang="javascript">
+  const name = 'csonchen'
+</code>
+</pre>
 ```
 
 **受信任的节点**
