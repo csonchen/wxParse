@@ -136,9 +136,6 @@
 .wxParse-u {
   text-decoration: underline;
 }
-.wxParse-hide{
-  display: none;
-}
 .WxEmojiView{
   align-items: center;
 }
