@@ -98,7 +98,8 @@ Component({
         cacheInstance.set(pageNodeKey, [wxparseRootKey])
       }
       cacheInstance.set(wxparseRootKey, transData)
-      console.log(this.data)
+      // 作调试用，注释打开可以查看HTML解析出来的dom结构
+      // console.log(this.data)
     },
 
     /**

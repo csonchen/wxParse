@@ -143,6 +143,11 @@
       <text>\n</text>
     </block>
 
+    <!-- hr类型 -->
+    <block wx:elif="{{item.tag == 'hr'}}">
+      <view class="wxParse-hr" />
+    </block>
+
     <!-- 其它块级标签 -->
     <block wx:elif="{{item.tagType == 'block'}}">
       <view class="{{item.classStr}} wxParse-{{item.tag}} mb10" style="{{item.styleStr}}">
@@ -164,7 +169,7 @@
   <block wx:elif="{{item.node == 'text'}}">
     <view class="WxEmojiView wxParse-inline" style="{{item.styleStr}}">
       <block wx:for="{{item.textArray}}" wx:key="index" wx:for-index="index" wx:for-item="textItem">
-        <block class="{{textItem.text == '\\n' ? 'wxParse-hide':''}}" wx:if="{{textItem.node == 'text'}}">
+        <block wx:if="{{textItem.node == 'text' && textItem.text !== '\\n'}}">
           <text selectable="{{true}}">{{textItem.text}}</text>
         </block>
         <block wx:elif="{{textItem.node == 'element'}}">
