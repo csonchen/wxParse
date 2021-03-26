@@ -117,7 +117,6 @@ Component({
         this.setData({
           width: recal.imageWidth,
           height: recal.imageHeight,
-          [`nodesData[${index}].loaded`]: true,
         })
       }
     },
