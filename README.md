@@ -24,8 +24,8 @@
 
 目前该项目已经可以支持以下标签的渲染：
 
-  - [x] audio标签（可自行更换组件样式，暂时采用微信公众号文章的`audio`音乐播放器的样式处理）
-  - [x] code标签
+  - [x] audio标签（可自行更换组件样式，暂时采用微信公众号文章的`audio`音乐播放器的样式处理）**【扩展组件】**
+  - [x] code标签 **【扩展组件】**
   - [x] video标签
   - [x] table标签
   - [x] ul标签
@@ -46,7 +46,7 @@
 
 ### 1. 原生组件使用方法
 
-- 克隆 [项目](https://github.com/csonchen/wxParse) 代码，把 **components目录** 拷贝到你的小程序根目录下面;
+- 克隆 [项目](https://github.com/csonchen/wxParse) 代码，把 **dist目录下的wxParse目录** 拷贝到你的小程序组件目录下面;
 
 - 在你的 **page页面** 对应的 `json` 文件引入 `wxParse` 组件
 
@@ -90,6 +90,31 @@ npm install --save wx-minicomponent
 ```xml
 <wxParse nodes="{{ htmlText }}" />
 ```
+
+## 组件扩展
+
+基础的富文本组件只支持基础的标签解析，出于小程序包体积考虑，读者可以根据需要按需引入组件，打包构建。
+
+名称|功能|构建命令
+:--|:--|:--
+wxAudio | 音频播放器 | npm run pack:wxAudio
+highLight | 代码块高亮显示 | npm run pack:highLight
+
+**使用方法：**
+
+1. 需要引入音频播放器组件，执行命令:
+
+```shell
+npm run pack:wxAudio
+```
+
+2. 执行构建压缩命令，打包到 `dist` 目录下：
+
+```shell
+npm run build
+```
+
+3. 将dist目录下的`wxParse目录`和`wxAudio目录`克隆到你的项目组件目录，正常引入wxParse组件即可。
 
 ## 参数文档
 
@@ -221,6 +246,8 @@ src|音频地址|String|
 </left>
 
 ## 更新历史
+
+- 2021-5-17：**`feat`** 将`wxAudio音频播放器`和`highLight代码块高亮组件`抽离出来作为扩展组件，可根据需要自行构建打包
 
 - 2021-3-26: **`feat`** 修复图片二次请求加载的bug，优化图片懒加载 + 展示渐变动画
 
