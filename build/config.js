@@ -1,4 +1,13 @@
 const config = {
+  highLight: {
+    name: 'highLight',
+    path: '../highLight/highLight',
+    template: `
+      <view class="{{item.classStr}}" style="{{item.styleStr}}">
+        <highLight codeText="{{item.content}}" language="{{item.attr && item.attr.lang}}" />
+      </view>
+    `,
+  },
   wxAudio: {
     name: 'wxAudio',
     path: '../wxAudio/wxAudio',
