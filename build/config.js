@@ -2,6 +2,7 @@ const config = {
   highLight: {
     name: 'highLight',
     path: '../highLight/highLight',
+    renderKey: 'highLightTemplate',
     template: `
       <view class="{{item.classStr}}" style="{{item.styleStr}}">
         <highLight codeText="{{item.content}}" language="{{item.attr && item.attr.lang}}" />
@@ -11,6 +12,7 @@ const config = {
   wxAudio: {
     name: 'wxAudio',
     path: '../wxAudio/wxAudio',
+    renderKey: 'wxAudioTemplate',
     template: `
       <view class="wxParse-audio">
         <wxAudio 
