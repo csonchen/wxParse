@@ -6,6 +6,7 @@
   "setting": {
     "urlCheck": false,
     "es6": true,
+    "enhance": true,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
@@ -29,8 +30,7 @@
     "useCompilerModule": true,
     "userConfirmedUseCompilerModuleSwitch": false,
     "packNpmManually": false,
-    "packNpmRelationList": [],
-    "enhance": true
+    "packNpmRelationList": []
   },
   "compileType": "miniprogram",
   "libVersion": "2.10.4",

@@ -11,6 +11,8 @@
     "dist"
   ],
   "scripts": {
+    "pack:wxAudio": "node build wxAudio",
+    "pack:highLight": "node build highLight",
     "build": "gulp build"
   },
   "repository": {
