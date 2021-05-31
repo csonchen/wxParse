@@ -1,8 +1,23 @@
 <block wx:for="{{nodesData}}" wx:for-index="index" wx:key="index" wx:for-item="item">
   <!-- 判断是否为标签节点 -->
   <block wx:if="{{item.node == 'element'}}">
+    <!-- input类型 -->
+    <block wx:if="{{item.tag == 'input'}}">
+      <wxForm attr="{{item.attr}}"></wxForm>
+    </block>
+
+    <!-- label类型 -->
+    <block wx:elif="{{item.tag == 'label'}}">
+      <label class="wxLabel" for="{{item.attr.for}}">
+        <!-- 如果还有子节点，递归遍历自身 -->
+        <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">
+          <wxParse nodes="{{child}}" rootkey="{{wxparseRootKey}}" pageKey="{{pageNodeKey}}" />
+        </block>
+      </label>
+    </block>
+
     <!-- button类型 -->
-    <block wx:if="{{item.tag == 'button'}}">
+    <block wx:elif="{{item.tag == 'button'}}">
       <button type="default" size="mini">
         <!-- 如果还有子节点，递归遍历自身 -->
         <block wx:for="{{item.nodes}}" wx:for-index="index" wx:key="index" wx:for-item="child">

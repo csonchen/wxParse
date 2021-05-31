@@ -1,6 +1,7 @@
 {
   "component":true,
   "usingComponents":{
-    "wxParse":"./wxParse"
+    "wxParse":"./wxParse",
+    "wxForm": "../wxForm/wxForm"
   }
 }

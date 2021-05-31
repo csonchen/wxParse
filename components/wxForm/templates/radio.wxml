@@ -1,0 +1,3 @@
+<template name="radio">
+  <radio value="{{id}}" id="{{id}}" name="radio" />
+</template>

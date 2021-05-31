@@ -1,0 +1,5 @@
+<!-- 引入表单组件模板 -->
+<import src="./templates/radio.wxml" />
+<import src="./templates/checkbox.wxml" />
+
+<template is="radio" wx:if="{{attr.type === 'radio'}}" data="{{...attr}}"></template>

@@ -19,6 +19,19 @@ const html = `
     <script>console.log('test');</script>
   </head>
   <div style="margin: 10px 0 10px;">
+    <b>* form表单标签组</b>
+    <div>
+      <div><i style="color: gray;">radio标签</i></div>
+      <div>
+        <input type="radio" name="radio" id="china" />
+        <label for="china">中国</label>
+        <input type="radio" name="radio" id="usa" />
+        <label for="usa">美国</label>
+      </div>
+      <div><i style="color: gray;">checkbox标签</i></div>
+    </div>
+  </div>
+  <div style="margin: 10px 0 10px;">
     <b>* blockquote标签</b>
   </div>
   <blockquote>\r\n<p>std::string&nbsp; abc [] = {\"test\",\"test2\",\"test3\",\"test4\"};<\/p>\r\n<\/blockquote>
